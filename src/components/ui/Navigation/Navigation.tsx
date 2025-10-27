@@ -1,17 +1,14 @@
 import { useState } from 'react';
 import { GlobeIcon, SunIcon, MoonIcon } from '@radix-ui/react-icons';
+import { useTheme } from '../../../contexts/ThemeContext';
 import styles from './Navigation.module.scss';
 
 const Navigation = () => {
 	const [language, setLanguage] = useState<'en' | 'uk'>('en');
-	const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+	const { theme, toggleTheme } = useTheme();
 
 	const toggleLanguage = () => {
 		setLanguage((prev) => (prev === 'en' ? 'uk' : 'en'));
-	};
-
-	const toggleTheme = () => {
-		setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 	};
 
 	const leftMenuItems = [
@@ -27,7 +24,7 @@ const Navigation = () => {
 	];
 
 	return (
-		<nav className={styles.navigation}>
+		<nav className={`${styles.navigation} ${theme === 'light' ? 'light' : 'dark'}`}>
 			<div className={styles.menuWrapper}>
 				{/* Left menu items */}
 				<div className={styles.leftMenu}>

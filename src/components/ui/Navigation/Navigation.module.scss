@@ -28,16 +28,24 @@
 
 .menuItem {
 	font-family: 'Orbitron', sans-serif;
-	font-size: 14px;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 600;
 	color: rgba(255, 255, 255, 0.8);
 	text-decoration: none;
 	letter-spacing: 0.05em;
 	transition: all 0.3s ease;
 	position: relative;
 
+	.navigation:global(.light) & {
+		color: rgba(0, 0, 0, 0.85);
+	}
+
 	&:hover {
 		color: #afc1f7;
+
+		.navigation:global(.light) & {
+			color: #000000;
+		}
 	}
 
 	&::after {
@@ -49,6 +57,10 @@
 		height: 1px;
 		background: linear-gradient(90deg, #afc1f7 0%, #8b99c4 100%);
 		transition: width 0.3s ease;
+
+		.navigation:global(.light) & {
+			background: linear-gradient(90deg, #4a5a80 0%, #2a3a60 100%);
+		}
 	}
 
 	&:hover::after {
@@ -73,10 +85,21 @@
 	cursor: pointer;
 	transition: all 0.3s ease;
 
+	.navigation:global(.light) & {
+		background: rgba(0, 0, 0, 0.05);
+		border-color: rgba(0, 0, 0, 0.2);
+		color: #000000;
+	}
+
 	&:hover {
 		background: rgba(175, 193, 247, 0.2);
 		border-color: rgba(175, 193, 247, 0.5);
 		transform: translateY(-1px);
+
+		.navigation:global(.light) & {
+			background: rgba(0, 0, 0, 0.1);
+			border-color: rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	&:active {
@@ -107,10 +130,21 @@
 	cursor: pointer;
 	transition: all 0.3s ease;
 
+	.navigation:global(.light) & {
+		background: rgba(0, 0, 0, 0.05);
+		border-color: rgba(0, 0, 0, 0.2);
+		color: #000000;
+	}
+
 	&:hover {
 		background: rgba(175, 193, 247, 0.2);
 		border-color: rgba(175, 193, 247, 0.5);
 		transform: translateY(-1px);
+
+		.navigation:global(.light) & {
+			background: rgba(0, 0, 0, 0.1);
+			border-color: rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	&:active {
@@ -140,7 +174,7 @@
 	}
 
 	.menuItem {
-		font-size: 13px;
+		font-size: 15px;
 	}
 
 	.themeToggle {

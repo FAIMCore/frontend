@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Navigation from '../ui/Navigation/Navigation';
+import { useTheme } from '../../contexts/ThemeContext';
 import styles from './AnimatedGrid.module.scss';
 
 interface MovingElement {
@@ -14,6 +15,7 @@ interface MovingElement {
 
 const AnimatedGrid = () => {
 	const [elements, setElements] = useState<MovingElement[]>([]);
+	const { theme } = useTheme();
 
 	// Grid configuration
 	const gridSize = { horizontal: 6, vertical: 10 };
@@ -44,7 +46,10 @@ const AnimatedGrid = () => {
 	}, []);
 
 	return (
-		<div className={styles.container}>
+		<div
+			className={`${styles.container} ${
+				theme === 'light' ? styles.light : styles.dark
+			}`}>
 			{/* Navigation menu */}
 			<Navigation />
 

@@ -1,12 +1,17 @@
 import { useState } from 'react';
-import { GlobeIcon } from '@radix-ui/react-icons';
+import { GlobeIcon, SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import styles from './Navigation.module.scss';
 
 const Navigation = () => {
 	const [language, setLanguage] = useState<'en' | 'uk'>('en');
+	const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
 	const toggleLanguage = () => {
 		setLanguage((prev) => (prev === 'en' ? 'uk' : 'en'));
+	};
+
+	const toggleTheme = () => {
+		setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 	};
 
 	const leftMenuItems = [
@@ -23,26 +28,40 @@ const Navigation = () => {
 
 	return (
 		<nav className={styles.navigation}>
-			{/* Left menu items */}
-			<div className={styles.leftMenu}>
-				{leftMenuItems.map((item) => (
-					<a key={item.href} href={item.href} className={styles.menuItem}>
-						{item.label}
-					</a>
-				))}
+			<div className={styles.menuWrapper}>
+				{/* Left menu items */}
+				<div className={styles.leftMenu}>
+					{leftMenuItems.map((item) => (
+						<a key={item.href} href={item.href} className={styles.menuItem}>
+							{item.label}
+						</a>
+					))}
+				</div>
+
+				{/* Logo space (centered) */}
+				<div className={styles.logoSpace} />
+
+				{/* Right menu items */}
+				<div className={styles.rightMenu}>
+					{rightMenuItems.map((item) => (
+						<a key={item.href} href={item.href} className={styles.menuItem}>
+							{item.label}
+						</a>
+					))}
+				</div>
 			</div>
 
-			{/* Logo space (centered) */}
-			<div className={styles.logoSpace} />
-
-			{/* Right menu items */}
-			<div className={styles.rightMenu}>
-				{rightMenuItems.map((item) => (
-					<a key={item.href} href={item.href} className={styles.menuItem}>
-						{item.label}
-					</a>
-				))}
-			</div>
+			{/* Theme toggle button */}
+			<button
+				onClick={toggleTheme}
+				className={styles.themeToggle}
+				aria-label='Toggle theme'>
+				{theme === 'light' ? (
+					<MoonIcon className={styles.icon} />
+				) : (
+					<SunIcon className={styles.icon} />
+				)}
+			</button>
 
 			{/* Language toggle button */}
 			<button

@@ -15,17 +15,33 @@ interface MovingElement {
 
 const AnimatedGrid = () => {
 	const [elements, setElements] = useState<MovingElement[]>([]);
+	const [gridSize, setGridSize] = useState({ horizontal: 8, vertical: 12 });
+	const [gridSpacing] = useState({ horizontal: 140, vertical: 140 }); // Fixed spacing in pixels
 	const { theme } = useTheme();
 
-	// Grid configuration
-	const gridSize = { horizontal: 6, vertical: 10 };
+	useEffect(() => {
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+
+		// Calculate number of lines based on viewport size and fixed spacing
+		const horizontalLines = Math.floor(height / gridSpacing.horizontal);
+		const verticalLines = Math.floor(width / gridSpacing.vertical);
+
+		setGridSize({
+			horizontal: Math.max(6, horizontalLines),
+			vertical: Math.max(8, verticalLines),
+		});
+	}, []);
 
 	useEffect(() => {
-		// Generate random moving elements
 		const generatedElements: MovingElement[] = [];
 		const colors = ['#ffffff'];
 
-		for (let i = 0; i < 15; i++) {
+		// Adjust number of elements based on grid size
+		const totalLines = gridSize.horizontal + gridSize.vertical;
+		const elementCount = Math.min(Math.floor(totalLines * 0.9), 15);
+
+		for (let i = 0; i < elementCount; i++) {
 			const type = Math.random() > 0.5 ? 'horizontal' : 'vertical';
 			const lineIndex =
 				type === 'horizontal'
@@ -43,7 +59,7 @@ const AnimatedGrid = () => {
 		}
 
 		setElements(generatedElements);
-	}, []);
+	}, [gridSize]);
 
 	return (
 		<div
@@ -52,14 +68,6 @@ const AnimatedGrid = () => {
 			}`}>
 			{/* Navigation menu */}
 			<Navigation />
-
-			{/* Logo at the top - light source */}
-			<div className={styles.logo}>
-				<img
-					src='/logo.svg'
-					alt='FAIMCore LSS'
-				/>
-			</div>
 
 			{/* Center text content */}
 			<div className={styles.centerContent}>
@@ -81,9 +89,7 @@ const AnimatedGrid = () => {
 						key={`h-${i}`}
 						className={styles.horizontalLine}
 						style={{
-							top: `${
-								(100 / (gridSize.horizontal + 1)) * (i + 1)
-							}%`,
+							top: `${gridSpacing.horizontal * (i + 1)}px`,
 						}}
 					/>
 				))}
@@ -94,9 +100,7 @@ const AnimatedGrid = () => {
 						key={`v-${i}`}
 						className={styles.verticalLine}
 						style={{
-							left: `${
-								(100 / (gridSize.vertical + 1)) * (i + 1)
-							}%`,
+							left: `${gridSpacing.vertical * (i + 1)}px`,
 						}}
 					/>
 				))}
@@ -107,7 +111,7 @@ const AnimatedGrid = () => {
 				<MovingElement
 					key={element.id}
 					element={element}
-					gridSize={gridSize}
+					gridSpacing={gridSpacing}
 				/>
 			))}
 		</div>
@@ -116,16 +120,16 @@ const AnimatedGrid = () => {
 
 interface MovingElementProps {
 	element: MovingElement;
-	gridSize: { horizontal: number; vertical: number };
+	gridSpacing: { horizontal: number; vertical: number };
 }
 
-const MovingElement = ({ element, gridSize }: MovingElementProps) => {
+const MovingElement = ({ element, gridSpacing }: MovingElementProps) => {
 	const isHorizontal = element.type === 'horizontal';
 
-	// Calculate line position
-	const linePosition = isHorizontal
-		? `${(100 / (gridSize.horizontal + 1)) * (element.lineIndex + 1)}%`
-		: `${(100 / (gridSize.vertical + 1)) * (element.lineIndex + 1)}%`;
+	// Calculate line position in pixels
+	const linePositionPx = isHorizontal
+		? gridSpacing.horizontal * (element.lineIndex + 1)
+		: gridSpacing.vertical * (element.lineIndex + 1);
 
 	return (
 		<motion.div
@@ -133,12 +137,12 @@ const MovingElement = ({ element, gridSize }: MovingElementProps) => {
 			style={{
 				backgroundColor: element.color,
 				boxShadow: `0 0 30px ${element.color}, 0 0 60px ${element.color}, 0 0 90px ${element.color}`,
-				left: isHorizontal ? '0%' : linePosition,
-				top: isHorizontal ? linePosition : '0%',
+				left: isHorizontal ? '0px' : `${linePositionPx}px`,
+				top: isHorizontal ? `${linePositionPx}px` : '0px',
 			}}
 			animate={{
-				left: isHorizontal ? '100%' : linePosition,
-				top: isHorizontal ? linePosition : '100%',
+				left: isHorizontal ? '100%' : `${linePositionPx}px`,
+				top: isHorizontal ? `${linePositionPx}px` : '100%',
 			}}
 			transition={{
 				duration: element.duration,

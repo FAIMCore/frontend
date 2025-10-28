@@ -1,0 +1,23 @@
+.logo {
+	width: 250px;
+	max-width: 100%;
+	height: auto;
+	transition: all 0.3s ease;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+@media (max-width: 768px) {
+	.logo {
+		width: 200px;
+	}
+}
+
+@media (max-width: 480px) {
+	.logo {
+		width: 180px;
+	}
+}

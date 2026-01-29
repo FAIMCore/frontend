@@ -8,58 +8,58 @@ export const en = {
 		contact: 'Contact',
 	},
 	hero: {
-		tagline: 'Family Web Studio',
-		title: 'We build websites',
-		titleLine2: 'with heart and soul',
-		subtitle: 'Where your project becomes part of our family',
-		cta: "Let's Talk",
-		ctaSecondary: 'See Our Work',
+		tagline: 'Web Development Studio',
+		title: 'We deliver digital',
+		titleLine2: 'solutions that work',
+		subtitle: 'Professional web development with a focus on quality and results',
+		cta: 'Get Started',
+		ctaSecondary: 'View Portfolio',
 		scroll: 'Scroll to explore',
 	},
 	about: {
 		label: 'About Us',
-		title: 'A family studio where your project feels like home',
+		title: 'Focused on delivering real results',
 		description1:
-			'FAIMCore is a cozy family web development studio. We believe that the best projects are born from trust and warm relationships. No corporate bureaucracy — just honest conversations over a cup of coffee (virtual ones count too!).',
+			'FAIMCore is a web development studio that prioritizes quality, clear communication, and measurable outcomes. We approach every project with professionalism and a commitment to understanding your business goals.',
 		description2:
-			"We treat every client like a good neighbor: we listen carefully, advise sincerely, and always deliver on our promises. Our furry team members make sure we never miss a deadline — they remind us about walks, which means it's time to wrap up the work!",
+			'Our process is straightforward: we listen, we plan, we execute. No unnecessary complexity, no missed deadlines. Just reliable development that delivers what you need, when you need it.',
 		stats: {
 			projects: 'Projects Delivered',
-			clients: 'Happy Clients',
+			clients: 'Satisfied Clients',
 			experience: 'Years Experience',
 			satisfaction: 'Client Satisfaction',
 		},
 	},
 	services: {
 		label: 'Our Services',
-		title: 'What we do best',
+		title: 'What we do',
 		subtitle:
-			'We offer a comprehensive range of web development services to help your business thrive in the digital landscape.',
+			'Comprehensive web development services designed to help your business succeed in the digital space.',
 		items: {
 			webDev: {
 				title: 'Web Development',
 				description:
-					'Custom web applications built with modern technologies like React, Next.js, and TypeScript for optimal performance.',
+					'Custom web applications built with modern technologies like React, Next.js, and TypeScript for optimal performance and scalability.',
 			},
 			uiux: {
 				title: 'UI/UX Design',
 				description:
-					'Beautiful, intuitive interfaces designed with user experience at the forefront, ensuring engagement and conversions.',
+					'User-centered design that balances aesthetics with functionality, ensuring intuitive experiences that drive engagement.',
 			},
 			mobile: {
 				title: 'Mobile Apps',
 				description:
-					'Cross-platform mobile applications using React Native that deliver native-like experiences on iOS and Android.',
+					'Cross-platform mobile applications using React Native, delivering consistent experiences across iOS and Android.',
 			},
 			mvp: {
 				title: 'MVP Development',
 				description:
-					'Rapid prototyping and MVP development to help startups validate ideas and get to market quickly.',
+					'Rapid prototyping and MVP development to help you validate ideas and reach the market efficiently.',
 			},
 			api: {
 				title: 'API Integration',
 				description:
-					'Seamless integration with third-party services, payment gateways, and custom API development.',
+					'Seamless integration with third-party services, payment systems, and custom API development.',
 			},
 			performance: {
 				title: 'Performance Optimization',
@@ -70,16 +70,16 @@ export const en = {
 	},
 	portfolio: {
 		label: 'Portfolio',
-		title: 'Our recent work',
+		title: 'Recent projects',
 		subtitle:
-			'Explore some of our latest projects that showcase our expertise in building powerful digital solutions.',
+			'A selection of projects that demonstrate our expertise in building effective digital solutions.',
 		viewProject: 'View Project',
 		projects: {
 			fintrack: {
 				title: 'FinTrack Pro',
 				category: 'FinTech',
 				description:
-					'A comprehensive financial management platform with real-time analytics, budget tracking, and investment insights.',
+					'Financial management platform with real-time analytics, budget tracking, and investment insights.',
 			},
 			health: {
 				title: 'HealthConnect',
@@ -91,105 +91,100 @@ export const en = {
 				title: 'ShopFlow',
 				category: 'E-commerce',
 				description:
-					'Modern e-commerce solution with AI-powered recommendations and seamless checkout experience.',
+					'E-commerce solution with AI-powered recommendations and optimized checkout experience.',
 			},
 			edu: {
 				title: 'EduLearn',
 				category: 'EdTech',
 				description:
-					'Interactive learning platform with video courses, quizzes, and progress tracking for students.',
+					'Interactive learning platform with video courses, assessments, and progress tracking.',
 			},
 			logi: {
 				title: 'LogiTrack',
 				category: 'Logistics',
 				description:
-					'Real-time fleet management and delivery tracking system with route optimization.',
+					'Fleet management and delivery tracking system with route optimization capabilities.',
 			},
 			event: {
 				title: 'EventHub',
 				category: 'Events',
 				description:
-					'Event management platform with ticketing, scheduling, and attendee engagement features.',
+					'Event management platform with ticketing, scheduling, and attendee management features.',
 			},
 		},
 	},
 	team: {
-		label: 'Our Family',
-		title: 'Meet our team',
+		label: 'Our Team',
+		title: 'The people behind FAIMCore',
 		subtitle:
-			'We are a small but close-knit family. Each of us brings something special to every project — from code to creative ideas to moral support.',
+			'A dedicated team of professionals committed to delivering excellence in every project.',
 		members: {
 			igor: {
 				name: 'Igor Fedianin',
 				role: 'Founder & Lead Developer',
-				bio: 'Husband, dog dad, and code enthusiast. Turns coffee into websites and ideas into reality. Available 24/7 (the dogs make sure of it).',
+				bio: 'Full-stack developer with expertise in React, Node.js, and cloud architecture. Focused on building scalable, maintainable solutions.',
 			},
 			anna: {
 				name: 'Anna Fedianina',
-				role: 'Creative Director & Wife',
-				bio: 'The heart and soul of the studio. Keeps everything beautiful and everyone fed. Her superpower: turning "meh" into "wow".',
+				role: 'Creative Director',
+				bio: 'Designer with a keen eye for detail and user experience. Specializes in creating interfaces that are both beautiful and functional.',
 			},
-			dog1: {
-				name: 'Buddy',
-				role: 'Chief Happiness Officer',
-				bio: 'Responsible for team morale and mandatory play breaks. Specializes in greeting clients with enthusiasm (and sometimes too much drool).',
-			},
-			dog2: {
-				name: 'Luna',
-				role: 'Quality Assurance Manager',
-				bio: 'Ensures every project gets proper attention by sitting on the keyboard at critical moments. Expert in stress-testing deadlines.',
+			alex: {
+				name: 'Alex Kovalenko',
+				role: 'Backend Developer',
+				bio: 'Backend specialist with deep knowledge of databases, APIs, and system architecture. Ensures robust and efficient server-side solutions.',
 			},
 		},
 	},
 	blog: {
 		label: 'Blog',
-		title: 'Latest insights',
+		title: 'Insights & Articles',
 		subtitle:
-			'Stay up to date with the latest trends, tutorials, and insights from our team.',
+			'Technical insights, industry trends, and practical knowledge from our team.',
 		readMore: 'Read more',
 		viewAll: 'View All Articles',
 		posts: {
 			react: {
-				title: 'Building Scalable React Applications in 2024',
+				title: 'Building Scalable React Applications',
 				excerpt:
-					'Learn the best practices for structuring large-scale React applications with modern tooling and patterns.',
+					'Best practices for structuring large-scale React applications with modern tooling and patterns.',
 				category: 'Development',
 			},
 			design: {
-				title: 'The Future of Web Design: Trends to Watch',
+				title: 'Web Design Trends to Watch',
 				excerpt:
-					'Explore the emerging design trends that will shape the web in the coming years.',
+					'Emerging design trends that are shaping the future of web interfaces.',
 				category: 'Design',
 			},
 			performance: {
-				title: 'Optimizing Performance for Modern Web Apps',
+				title: 'Performance Optimization Guide',
 				excerpt:
-					'A comprehensive guide to improving loading times and runtime performance of your web applications.',
+					'A practical guide to improving loading times and runtime performance of web applications.',
 				category: 'Performance',
 			},
 		},
 		minRead: 'min read',
 	},
 	contact: {
-		label: 'Get in Touch',
-		title: "Let's have a coffee and chat about your project",
+		label: 'Contact',
+		title: 'Start a conversation',
 		description:
-			"No pressure, no complicated forms. Just reach out like you would to a friend. We love hearing new ideas and are always happy to give honest advice — even if you're just brainstorming!",
+			'Ready to discuss your project? Reach out and we will get back to you with a clear plan of action.',
 		info: {
 			email: {
-				title: 'Email Us',
+				title: 'Email',
 				value: 'hello@faimcore.com',
-				description: 'We reply within 24 hours',
+				description: 'Response within 24 hours',
 			},
 			phone: {
-				title: 'Call Us',
+				title: 'Phone',
 				value: '+38 098 550 77 99',
 				description: 'Mon-Fri, 9am-6pm',
 			},
 			chat: {
 				title: 'Live Chat',
 				value: 'Start a conversation',
-				description: 'Available Mon-Fri, 9am-6pm',
+				description: 'Mon-Fri, 9am-6pm',
 			},
 			location: {
 				title: 'Location',
@@ -199,19 +194,19 @@ export const en = {
 		},
 		form: {
 			name: 'Name',
-			namePlaceholder: 'John Doe',
+			namePlaceholder: 'Your name',
 			email: 'Email',
-			emailPlaceholder: 'john@example.com',
+			emailPlaceholder: 'your@email.com',
 			subject: 'Subject',
 			subjectPlaceholder: 'Project inquiry',
 			message: 'Message',
-			messagePlaceholder: 'Tell us about your project...',
+			messagePlaceholder: 'Describe your project...',
 			submit: 'Send Message',
 		},
 	},
 	footer: {
 		description:
-			'A cozy family studio crafting websites with love, care, and the occasional paw print on the keyboard.',
+			'Professional web development studio focused on delivering quality digital solutions.',
 		company: 'Company',
 		services: 'Services',
 		resources: 'Resources',
@@ -230,7 +225,7 @@ export const en = {
 			terms: 'Terms of Service',
 		},
 		copyright: '© {year} FAIMCore. All rights reserved.',
-		madeWith: 'Made with passion in Ukraine',
+		madeWith: 'Based in Ukraine',
 	},
 };
 

@@ -62,8 +62,10 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	gap: 32px;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .card {
@@ -222,14 +224,54 @@
 
 	.title {
 		font-size: 32px;
+		line-height: 1.2;
+	}
+
+	.subtitle {
+		font-size: 16px;
+		line-height: 1.6;
 	}
 
 	.grid {
-		gap: 24px;
+		gap: 20px;
 	}
 
 	.card {
-		padding: 28px 20px;
+		padding: 24px 20px;
+	}
+
+	.imageWrapper {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.name {
+		font-size: 18px;
+	}
+
+	.role {
+		font-size: 13px;
+	}
+
+	.bio {
+		font-size: 13px;
+		line-height: 1.5;
+		margin: 6px 0 14px;
+	}
+
+	.social {
+		gap: 10px;
+	}
+
+	.socialLink {
+		width: 36px;
+		height: 36px;
+
+		svg {
+			width: 16px;
+			height: 16px;
+		}
 	}
 }
 
@@ -239,31 +281,73 @@
 	}
 
 	.container {
-		padding: 0 20px;
+		padding: 0 16px;
+	}
+
+	.header {
+		margin-bottom: 40px;
+	}
+
+	.label {
+		font-size: 12px;
+		letter-spacing: 0.15em;
 	}
 
 	.title {
-		font-size: 28px;
+		font-size: 26px;
+		margin: 12px 0 16px;
 	}
 
 	.subtitle {
-		font-size: 16px;
+		font-size: 15px;
 	}
 
 	.grid {
 		grid-template-columns: 1fr;
+		gap: 16px;
+		max-width: 340px;
+	}
+
+	.card {
+		padding: 24px 20px;
+		border-radius: 20px;
 	}
 
 	.imageWrapper {
-		width: 100px;
-		height: 100px;
+		width: 90px;
+		height: 90px;
+		margin-bottom: 16px;
+		border-width: 2px;
+	}
+
+	.content {
+		gap: 4px;
 	}
 
 	.name {
-		font-size: 18px;
+		font-size: 17px;
+	}
+
+	.role {
+		font-size: 12px;
+		letter-spacing: 0.02em;
 	}
 
 	.bio {
 		font-size: 13px;
+		line-height: 1.5;
+		margin: 8px 0 12px;
+		padding: 0 4px;
+	}
+
+	.socialLink {
+		width: 34px;
+		height: 34px;
+		border-radius: 8px;
+
+		svg {
+			width: 15px;
+			height: 15px;
+		}
 	}
 }

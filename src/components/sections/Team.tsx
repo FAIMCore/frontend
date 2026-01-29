@@ -4,14 +4,12 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Team.module.scss';
 
-const memberKeys = ['igor', 'anna', 'dog1', 'dog2'] as const;
+const memberKeys = ['igor', 'anna', 'alex'] as const;
 const memberImages = [
 	'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
 	'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
 ];
-const isDog = (key: string) => key === 'dog1' || key === 'dog2';
 
 const Team = () => {
 	const { theme } = useTheme();
@@ -24,7 +22,7 @@ const Team = () => {
 		role: t.team.members[key].role,
 		bio: t.team.members[key].bio,
 		image: memberImages[index],
-		social: isDog(key) ? null : { linkedin: '#', github: '#', twitter: '#' },
+		social: { linkedin: '#', github: '#', twitter: '#' },
 	}));
 
 	return (

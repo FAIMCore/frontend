@@ -5,6 +5,7 @@ import { About, Services, Portfolio, Team, Blog, Contact, Footer } from './compo
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import SEO from './components/SEO/SEO';
+import ScrollToTop from './components/ui/ScrollToTop/ScrollToTop';
 
 function App() {
 	// Reset scroll position and clear hash on page load/refresh
@@ -30,6 +31,7 @@ function App() {
 						<Contact />
 						<Footer />
 					</main>
+					<ScrollToTop />
 				</ThemeProvider>
 			</LanguageProvider>
 		</HelmetProvider>

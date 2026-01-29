@@ -20,9 +20,9 @@ export const en = {
 		label: 'About Us',
 		title: 'A family studio where your project feels like home',
 		description1:
-			'FAIMCore is a cozy family web development studio. We believe that the best projects are born from trust and warm relationships. No corporate bureaucracy — just honest conversations over a cup of coffee (virtual ones count too!).',
+			'NestCode is a family web development studio built on trust and genuine relationships. We believe the best digital products come from close collaboration and mutual understanding. No corporate barriers — just open, honest communication.',
 		description2:
-			"We treat every client like a good neighbor: we listen carefully, advise sincerely, and always deliver on our promises. Our furry team members make sure we never miss a deadline — they remind us about walks, which means it's time to wrap up the work!",
+			'We treat every client as a valued partner: listening attentively, providing thoughtful guidance, and delivering on every commitment. Your success is our priority, and we take pride in building lasting relationships with everyone we work with.',
 		stats: {
 			projects: 'Projects Delivered',
 			clients: 'Happy Clients',
@@ -114,30 +114,30 @@ export const en = {
 		},
 	},
 	team: {
-		label: 'Our Family',
-		title: 'Meet our team',
+		label: 'Our Team',
+		title: 'Meet the people behind NestCode',
 		subtitle:
-			'We are a small but close-knit family. Each of us brings something special to every project — from code to creative ideas to moral support.',
+			'We are a dedicated family team combining technical expertise with creative vision. Together, we bring passion and care to every project we undertake.',
 		members: {
 			igor: {
 				name: 'Igor Fedianin',
 				role: 'Founder & Lead Developer',
-				bio: 'Husband, dog dad, and code enthusiast. Turns coffee into websites and ideas into reality. Available 24/7 (the dogs make sure of it).',
+				bio: 'Passionate about clean code and elegant solutions. With years of experience in web development, Igor leads our technical vision and ensures every project meets the highest standards.',
 			},
 			anna: {
 				name: 'Anna Fedianina',
-				role: 'Creative Director & Wife',
-				bio: 'The heart and soul of the studio. Keeps everything beautiful and everyone fed. Her superpower: turning "meh" into "wow".',
+				role: 'Creative Director',
+				bio: 'Brings creativity and attention to detail to every design. Anna ensures that our projects are not only functional but also visually compelling and user-friendly.',
 			},
 			dog1: {
 				name: 'Buddy',
-				role: 'Chief Happiness Officer',
-				bio: 'Responsible for team morale and mandatory play breaks. Specializes in greeting clients with enthusiasm (and sometimes too much drool).',
+				role: 'Office Companion',
+				bio: 'Our loyal companion who reminds us to take breaks and enjoy the simple things in life.',
 			},
 			dog2: {
 				name: 'Luna',
-				role: 'Quality Assurance Manager',
-				bio: 'Ensures every project gets proper attention by sitting on the keyboard at critical moments. Expert in stress-testing deadlines.',
+				role: 'Office Companion',
+				bio: 'Always by our side, bringing warmth and calm to our workspace.',
 			},
 		},
 	},
@@ -172,13 +172,13 @@ export const en = {
 	},
 	contact: {
 		label: 'Get in Touch',
-		title: "Let's have a coffee and chat about your project",
+		title: "Let's discuss your project",
 		description:
-			"No pressure, no complicated forms. Just reach out like you would to a friend. We love hearing new ideas and are always happy to give honest advice — even if you're just brainstorming!",
+			'We are here to help bring your ideas to life. Reach out to start a conversation about your project needs, and we will be happy to provide guidance and a clear path forward.',
 		info: {
 			email: {
 				title: 'Email Us',
-				value: 'hello@faimcore.com',
+				value: 'hello@nestcode.com',
 				description: 'We reply within 24 hours',
 			},
 			phone: {
@@ -211,7 +211,7 @@ export const en = {
 	},
 	footer: {
 		description:
-			'A cozy family studio crafting websites with love, care, and the occasional paw print on the keyboard.',
+			'A family web studio creating thoughtful digital solutions with care and dedication.',
 		company: 'Company',
 		services: 'Services',
 		resources: 'Resources',
@@ -229,8 +229,8 @@ export const en = {
 			privacy: 'Privacy Policy',
 			terms: 'Terms of Service',
 		},
-		copyright: '© {year} FAIMCore. All rights reserved.',
-		madeWith: 'Made with passion in Ukraine',
+		copyright: '© {year} NestCode. All rights reserved.',
+		madeWith: 'Made with care in Ukraine',
 	},
 };
 

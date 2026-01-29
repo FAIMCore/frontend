@@ -22,13 +22,21 @@ const Logo = () => {
 			xmlns='http://www.w3.org/2000/svg'
 			className={styles.logo}>
 
-			{/* Вариант 2: Только контур шестиугольника */}
+			{/* Элегантный шестиугольник с тонкими линиями */}
 			<g className={`${styles.diamond} ${isSpinning ? styles.spinning : ''}`}>
+				{/* Внешний шестиугольник */}
 				<path
-					d='M30 12 L51 24 L51 48 L30 60 L9 48 L9 24 Z'
+					d='M30 6 L54 20 L54 48 L30 62 L6 48 L6 20 Z'
 					fill='none'
 					stroke={primaryColor}
-					strokeWidth='4'
+					strokeWidth='2.5'
+				/>
+				{/* Внутренний шестиугольник */}
+				<path
+					d='M30 18 L44 27 L44 41 L30 50 L16 41 L16 27 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='1.5'
 				/>
 			</g>
 

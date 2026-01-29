@@ -22,7 +22,7 @@ const staggerContainer = {
 
 const AnimatedGrid = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
-	const animationRef = useRef<number>();
+	const animationRef = useRef<number | undefined>(undefined);
 	const { theme } = useTheme();
 	const { t } = useLanguage();
 

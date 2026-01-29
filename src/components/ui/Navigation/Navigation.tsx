@@ -29,36 +29,37 @@ const Navigation = () => {
 			className={`${styles.navigation} ${
 				theme === 'light' ? 'light' : 'dark'
 			}`}>
-			<div className={styles.menuWrapper}>
-				{/* Left menu items */}
-				<div className={styles.leftMenu}>
-					{leftMenuItems.map((item) => (
-						<a
-							key={item.href}
-							href={item.href}
-							className={styles.menuItem}>
-							{item.label}
-						</a>
-					))}
-				</div>
-
-				{/* Logo space (centered) */}
-				<div className={styles.logoSpace}>
-					<Logo />
-				</div>
-
-				{/* Right menu items */}
-				<div className={styles.rightMenu}>
-					{rightMenuItems.map((item) => (
-						<a
-							key={item.href}
-							href={item.href}
-							className={styles.menuItem}>
-							{item.label}
-						</a>
-					))}
-				</div>
+			{/* Left menu items */}
+			<div className={styles.leftMenu}>
+				{leftMenuItems.map((item) => (
+					<a
+						key={item.href}
+						href={item.href}
+						className={styles.menuItem}>
+						{item.label}
+					</a>
+				))}
 			</div>
+
+			{/* Logo space (centered) */}
+			<div className={styles.logoSpace}>
+				<Logo />
+			</div>
+
+			{/* Right menu items */}
+			<div className={styles.rightMenu}>
+				{rightMenuItems.map((item) => (
+					<a
+						key={item.href}
+						href={item.href}
+						className={styles.menuItem}>
+						{item.label}
+					</a>
+				))}
+			</div>
+
+			{/* Divider */}
+			<div className={styles.divider} />
 
 			{/* Control buttons container */}
 			<div className={styles.controlButtons}>
@@ -83,13 +84,6 @@ const Navigation = () => {
 					<span className={styles.languageText}>
 						{language === 'en' ? 'EN' : 'UA'}
 					</span>
-				</button>
-
-				{/* Login button */}
-				<button
-					className={styles.loginButton}
-					aria-label='Login'>
-					Login
 				</button>
 			</div>
 		</nav>

@@ -1,28 +1,51 @@
 .navigation {
 	position: absolute;
-	top: 40px;
-	left: 0;
-	right: 0;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 20;
-}
-
-.menuWrapper {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	gap: 40px;
-	padding: 0 60px;
+	gap: 24px;
+	padding: 14px 28px;
+	border-radius: 20px;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:global(.light) {
+		background: rgba(255, 255, 255, 0.75);
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	}
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(255, 255, 255, 0.15);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2),
+			inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+		&:global(.light) {
+			background: rgba(255, 255, 255, 0.9);
+			border-color: rgba(0, 0, 0, 0.1);
+		}
+	}
 }
 
 .leftMenu,
 .rightMenu {
 	display: flex;
 	align-items: center;
-	gap: 32px;
+	gap: 24px;
 }
 
 .logoSpace {
-	width: 350px;
+	width: 180px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -31,38 +54,41 @@
 
 .menuItem {
 	font-family: 'Inter', sans-serif;
-	font-size: 16px;
-	font-weight: 600;
-	color: rgba(255, 255, 255, 0.8);
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.85);
 	text-decoration: none;
-	letter-spacing: 0.05em;
-	transition: all 0.3s ease;
+	letter-spacing: 0.02em;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	position: relative;
+	padding: 6px 0;
 
 	.navigation:global(.light) & {
 		color: #3d3227;
 	}
 
 	&:hover {
-		color: #afc1f7;
+		color: #fff;
 
 		.navigation:global(.light) & {
-			color: #3d3227;
+			color: #1a1a1a;
 		}
 	}
 
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: -4px;
-		left: 0;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
 		width: 0;
-		height: 1px;
+		height: 2px;
 		background: linear-gradient(90deg, #afc1f7 0%, #8b99c4 100%);
-		transition: width 0.3s ease;
+		border-radius: 2px;
+		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 		.navigation:global(.light) & {
-			background: linear-gradient(90deg, #4a5a80 0%, #2a3a60 100%);
+			background: linear-gradient(90deg, #f4c430 0%, #e6a800 100%);
 		}
 	}
 
@@ -71,81 +97,52 @@
 	}
 }
 
-.controlButtons {
-	position: absolute;
-	right: 25px;
-	top: 0;
-	display: flex;
-	align-items: center;
-	gap: 12px;
-}
-
-.loginButton {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 6px 15px;
-	background: rgba(175, 193, 247, 0.15);
-	border: 1px solid rgba(175, 193, 247, 0.4);
-	border-radius: 8px;
-	color: #ffffff;
-	font-family: 'Orbitron', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	letter-spacing: 0.05em;
+.divider {
+	width: 1px;
+	height: 24px;
+	background: rgba(255, 255, 255, 0.15);
+	margin: 0 4px;
 
 	.navigation:global(.light) & {
-		background: rgba(0, 0, 0, 0.08);
-		border-color: rgba(0, 0, 0, 0.25);
-		color: #3d3227;
+		background: rgba(0, 0, 0, 0.1);
 	}
+}
 
-	&:hover {
-		background: rgba(175, 193, 247, 0.25);
-		border-color: rgba(175, 193, 247, 0.6);
-		transform: translateY(-1px);
-
-		.navigation:global(.light) & {
-			background: rgba(0, 0, 0, 0.15);
-			border-color: rgba(0, 0, 0, 0.35);
-		}
-	}
-
-	&:active {
-		transform: translateY(0);
-	}
+.controlButtons {
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .themeToggle {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 37px;
-	height: 37px;
+	width: 36px;
+	height: 36px;
 	padding: 0;
-	background: rgba(175, 193, 247, 0.1);
-	border: 1px solid rgba(175, 193, 247, 0.3);
-	border-radius: 8px;
-	color: #ffffff;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 10px;
+	color: rgba(255, 255, 255, 0.9);
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.navigation:global(.light) & {
-		background: rgba(0, 0, 0, 0.05);
-		border-color: rgba(0, 0, 0, 0.2);
+		background: rgba(0, 0, 0, 0.04);
+		border-color: rgba(0, 0, 0, 0.1);
 		color: #3d3227;
 	}
 
 	&:hover {
-		background: rgba(175, 193, 247, 0.2);
-		border-color: rgba(175, 193, 247, 0.5);
-		transform: translateY(-1px);
+		background: rgba(255, 255, 255, 0.15);
+		border-color: rgba(255, 255, 255, 0.25);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
 		.navigation:global(.light) & {
-			background: rgba(0, 0, 0, 0.1);
-			border-color: rgba(0, 0, 0, 0.3);
+			background: rgba(0, 0, 0, 0.08);
+			border-color: rgba(0, 0, 0, 0.15);
 		}
 	}
 
@@ -163,31 +160,32 @@
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	padding: 8px 14px;
-	background: rgba(175, 193, 247, 0.1);
-	border: 1px solid rgba(175, 193, 247, 0.3);
-	border-radius: 8px;
-	color: #ffffff;
-	font-family: 'Orbitron', sans-serif;
+	padding: 8px 12px;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 10px;
+	color: rgba(255, 255, 255, 0.9);
+	font-family: 'Inter', sans-serif;
 	font-size: 12px;
 	font-weight: 600;
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.navigation:global(.light) & {
-		background: rgba(0, 0, 0, 0.05);
-		border-color: rgba(0, 0, 0, 0.2);
+		background: rgba(0, 0, 0, 0.04);
+		border-color: rgba(0, 0, 0, 0.1);
 		color: #3d3227;
 	}
 
 	&:hover {
-		background: rgba(175, 193, 247, 0.2);
-		border-color: rgba(175, 193, 247, 0.5);
-		transform: translateY(-1px);
+		background: rgba(255, 255, 255, 0.15);
+		border-color: rgba(255, 255, 255, 0.25);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
 		.navigation:global(.light) & {
-			background: rgba(0, 0, 0, 0.1);
-			border-color: rgba(0, 0, 0, 0.3);
+			background: rgba(0, 0, 0, 0.08);
+			border-color: rgba(0, 0, 0, 0.15);
 		}
 	}
 
@@ -202,73 +200,79 @@
 }
 
 .languageText {
-	letter-spacing: 0.1em;
+	letter-spacing: 0.05em;
 }
 
 // Responsive design
 @media (max-width: 1200px) {
-	.menuWrapper {
-		gap: 20px;
-		padding: 0 40px;
+	.navigation {
+		padding: 12px 20px;
+		gap: 16px;
 	}
 
 	.leftMenu,
 	.rightMenu {
-		gap: 20px;
+		gap: 16px;
+	}
+
+	.logoSpace {
+		width: 150px;
 	}
 
 	.menuItem {
-		font-size: 15px;
-	}
-
-	.controlButtons {
-		right: 40px;
-		gap: 10px;
-	}
-
-	.loginButton {
-		padding: 7px 16px;
 		font-size: 13px;
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	.navigation {
-		top: 20px;
-	}
-
-	.menuWrapper {
-		flex-direction: column;
-		gap: 20px;
-		padding: 0 20px;
-	}
-
-	.logoSpace {
-		width: 100%;
-		order: -1;
-		justify-content: flex-start;
-		padding-left: 0;
-	}
-
-	.leftMenu,
-	.rightMenu {
+		width: calc(100% - 40px);
+		max-width: 600px;
+		padding: 12px 16px;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 12px;
 	}
 
-	.menuItem {
-		font-size: 14px;
+	.leftMenu,
+	.rightMenu {
+		gap: 12px;
+	}
+
+	.logoSpace {
+		width: 100%;
+		order: -1;
+	}
+
+	.divider {
+		display: none;
 	}
 
 	.controlButtons {
-		top: 10px;
-		right: 20px;
+		position: absolute;
+		top: 16px;
+		right: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.navigation {
+		top: 15px;
+		width: calc(100% - 30px);
+		padding: 10px 14px;
 		gap: 8px;
 	}
 
-	.loginButton {
-		padding: 6px 14px;
+	.logoSpace {
+		width: 140px;
+	}
+
+	.leftMenu,
+	.rightMenu {
+		gap: 10px;
+	}
+
+	.menuItem {
 		font-size: 12px;
 	}
 
@@ -283,70 +287,7 @@
 	}
 
 	.languageToggle {
-		padding: 6px 12px;
+		padding: 6px 10px;
 		font-size: 11px;
-		gap: 4px;
-	}
-}
-
-@media (max-width: 480px) {
-	.navigation {
-		top: 15px;
-	}
-
-	.menuWrapper {
-		gap: 15px;
-		padding: 0 15px;
-	}
-
-	.logoSpace {
-		justify-content: flex-start;
-		padding-left: 0;
-	}
-
-	.leftMenu,
-	.rightMenu {
-		gap: 10px;
-	}
-
-	.menuItem {
-		font-size: 13px;
-	}
-
-	.controlButtons {
-		top: 10px;
-		right: 10px;
-		gap: 6px;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		max-width: 200px;
-	}
-
-	.loginButton {
-		padding: 5px 12px;
-		font-size: 11px;
-		order: 3;
-		width: 100%;
-	}
-
-	.themeToggle {
-		width: 28px;
-		height: 28px;
-
-		.icon {
-			width: 14px;
-			height: 14px;
-		}
-	}
-
-	.languageToggle {
-		padding: 5px 10px;
-		font-size: 10px;
-		gap: 3px;
-	}
-
-	.icon {
-		width: 14px;
-		height: 14px;
 	}
 }

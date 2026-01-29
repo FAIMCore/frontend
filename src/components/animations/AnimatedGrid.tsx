@@ -1,8 +1,23 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { ArrowDownIcon } from '@radix-ui/react-icons';
 import Navigation from '../ui/Navigation/Navigation';
 import { useTheme } from '../../contexts/ThemeContext';
 import styles from './AnimatedGrid.module.scss';
+
+const fadeInUp = {
+	initial: { opacity: 0, y: 30 },
+	animate: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+	animate: {
+		transition: {
+			staggerChildren: 0.15,
+			delayChildren: 0.3,
+		},
+	},
+};
 
 interface MovingElement {
 	id: number;
@@ -67,15 +82,62 @@ const AnimatedGrid = () => {
 				theme === 'light' ? styles.light : styles.dark
 			}`}>
 			{/* Navigation menu */}
-			<Navigation />
+			<motion.div
+				initial={{ opacity: 0, y: -20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+				<Navigation />
+			</motion.div>
 
 			{/* Center text content */}
-			<div className={styles.centerContent}>
-				<div className={styles.mainTitle}>
+			<motion.div
+				className={styles.centerContent}
+				variants={staggerContainer}
+				initial='initial'
+				animate='animate'>
+				<motion.div
+					className={styles.tagline}
+					variants={fadeInUp}
+					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+					Web Development Studio
+				</motion.div>
+				<motion.h1
+					className={styles.mainTitle}
+					variants={fadeInUp}
+					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
 					Building the foundation <br /> of your core business
-				</div>
-				<div className={styles.subtitle}>Your Core, Our Aim</div>
-			</div>
+				</motion.h1>
+				<motion.p
+					className={styles.subtitle}
+					variants={fadeInUp}
+					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+					Your Core, Our Aim
+				</motion.p>
+				<motion.div
+					className={styles.ctaContainer}
+					variants={fadeInUp}
+					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+					<button className={styles.ctaButton}>
+						<span>Start Your Project</span>
+						<div className={styles.ctaGlow} />
+					</button>
+					<button className={styles.ctaSecondary}>View Our Work</button>
+				</motion.div>
+			</motion.div>
+
+			{/* Scroll indicator */}
+			<motion.div
+				className={styles.scrollIndicator}
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 1.5, duration: 0.6 }}>
+				<span>Scroll to explore</span>
+				<motion.div
+					animate={{ y: [0, 8, 0] }}
+					transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}>
+					<ArrowDownIcon className={styles.scrollIcon} />
+				</motion.div>
+			</motion.div>
 
 			{/* Pyramid/cone spotlight effect - point at top, expands downward */}
 			<div className={styles.spotlightPrimary} />
@@ -138,7 +200,7 @@ const MovingElement = ({ element, gridSpacing }: MovingElementProps) => {
 			className={styles.movingElement}
 			style={{
 				backgroundColor: element.color,
-				boxShadow: `0 0 30px ${element.color}, 0 0 60px ${element.color}, 0 0 90px ${element.color}`,
+				boxShadow: `0 0 8px ${element.color}, 0 0 16px ${element.color}`,
 				left: isHorizontal ? '0px' : `${linePositionPx}px`,
 				top: isHorizontal ? `${linePositionPx}px` : '0px',
 			}}

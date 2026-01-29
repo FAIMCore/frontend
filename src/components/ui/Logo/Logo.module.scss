@@ -1,23 +1,30 @@
 .logo {
-	width: 250px;
+	width: 180px;
 	max-width: 100%;
 	height: auto;
-	transition: all 0.3s ease;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	cursor: pointer;
 
 	&:hover {
-		opacity: 0.8;
+		transform: scale(1.02);
+		filter: brightness(1.1);
+	}
+}
+
+@media (max-width: 1200px) {
+	.logo {
+		width: 150px;
 	}
 }
 
 @media (max-width: 768px) {
 	.logo {
-		width: 200px;
+		width: 140px;
 	}
 }
 
 @media (max-width: 480px) {
 	.logo {
-		width: 180px;
+		width: 130px;
 	}
 }

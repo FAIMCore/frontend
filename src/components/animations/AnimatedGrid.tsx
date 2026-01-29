@@ -6,25 +6,6 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './AnimatedGrid.module.scss';
 
-// Slide up + fade animation for hero
-const heroVariants = {
-	hidden: { opacity: 0, y: 30 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] },
-	},
-};
-
-const navVariants = {
-	hidden: { opacity: 0, y: -20 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
-	},
-};
-
 const AnimatedGrid = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const animationRef = useRef<number | undefined>(undefined);
@@ -311,18 +292,18 @@ const AnimatedGrid = () => {
 
 			{/* Navigation menu */}
 			<motion.div
-				variants={navVariants}
-				initial='hidden'
-				animate='visible'>
+				initial={{ opacity: 0, y: -20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6 }}>
 				<Navigation />
 			</motion.div>
 
 			{/* Center text content - slide up animation */}
 			<motion.div
 				className={styles.centerContent}
-				variants={heroVariants}
-				initial='hidden'
-				animate='visible'>
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.7 }}>
 				<div className={styles.tagline}>
 					{t.hero.tagline}
 				</div>

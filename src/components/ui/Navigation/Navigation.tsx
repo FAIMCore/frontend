@@ -57,49 +57,21 @@ const Navigation = () => {
 				className={`${styles.navigation} ${
 					theme === 'light' ? styles.light : styles.dark
 				}`}>
-				{/* Mobile: Hamburger button */}
-				{isMobile && (
-					<button
-						className={styles.hamburger}
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						aria-label="Toggle menu">
-						{isMenuOpen ? (
-							<Cross1Icon className={styles.hamburgerIcon} />
-						) : (
-							<HamburgerMenuIcon className={styles.hamburgerIcon} />
-						)}
-					</button>
-				)}
-
-				{/* Desktop: Left menu */}
-				{!isMobile && (
-					<div className={styles.leftMenu}>
-						{menuItems.slice(0, 3).map((item) => (
-							<a key={item.href} href={item.href} className={styles.menuItem}>
-								{item.label}
-							</a>
-						))}
-					</div>
-				)}
-
-				{/* Logo */}
+				{/* Logo - always on the left */}
 				<div className={styles.logoSpace}>
 					<Logo />
 				</div>
 
-				{/* Desktop: Right menu */}
+				{/* Desktop: Menu items */}
 				{!isMobile && (
-					<div className={styles.rightMenu}>
-						{menuItems.slice(3).map((item) => (
+					<div className={styles.menu}>
+						{menuItems.map((item) => (
 							<a key={item.href} href={item.href} className={styles.menuItem}>
 								{item.label}
 							</a>
 						))}
 					</div>
 				)}
-
-				{/* Divider (desktop only) */}
-				{!isMobile && <div className={styles.divider} />}
 
 				{/* Control buttons */}
 				<div className={styles.controlButtons}>
@@ -123,6 +95,20 @@ const Navigation = () => {
 							{language === 'en' ? 'EN' : 'UA'}
 						</span>
 					</button>
+
+					{/* Mobile: Hamburger button */}
+					{isMobile && (
+						<button
+							className={styles.hamburger}
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+							aria-label="Toggle menu">
+							{isMenuOpen ? (
+								<Cross1Icon className={styles.hamburgerIcon} />
+							) : (
+								<HamburgerMenuIcon className={styles.hamburgerIcon} />
+							)}
+						</button>
+					)}
 				</div>
 			</nav>
 

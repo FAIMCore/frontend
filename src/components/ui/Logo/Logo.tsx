@@ -34,20 +34,10 @@ const Logo = () => {
 				y='50'
 				fontFamily='Inter, system-ui, sans-serif'
 				fontSize='42'
-				fontWeight='600'
-				fill={secondaryColor}
-				letterSpacing='-0.5'>
-				FAIM
-			</text>
-			<text
-				x='176'
-				y='50'
-				fontFamily='Inter, system-ui, sans-serif'
-				fontSize='42'
 				fontWeight='700'
-				fill={primaryColor}
 				letterSpacing='-0.5'>
-				Core
+				<tspan fill={secondaryColor}>FAIM</tspan>
+				<tspan fill={primaryColor}>Core</tspan>
 			</text>
 		</svg>
 	);

@@ -3,19 +3,21 @@
 	max-width: 100%;
 	height: auto;
 	cursor: pointer;
-
-	&:hover {
-		.diamond {
-			transform: rotate(360deg);
-		}
-	}
 }
 
 .diamond {
 	transform-origin: 30px 34px;
-	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
 	&.spinning {
+		animation: spin 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
 		transform: rotate(360deg);
 	}
 }

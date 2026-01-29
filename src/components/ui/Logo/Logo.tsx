@@ -9,9 +9,18 @@ const Logo = () => {
 	const primaryColor = theme === 'light' ? '#B85C38' : '#D4856A';
 	const secondaryColor = theme === 'light' ? '#2D2D2D' : '#F5F5F5';
 
+	const triggerSpin = () => {
+		if (isSpinning) return;
+		setIsSpinning(true);
+		setTimeout(() => setIsSpinning(false), 600);
+	};
+
 	// Spin on page load
 	useEffect(() => {
-		const timer = setTimeout(() => setIsSpinning(true), 300);
+		const timer = setTimeout(() => {
+			setIsSpinning(true);
+			setTimeout(() => setIsSpinning(false), 600);
+		}, 300);
 		return () => clearTimeout(timer);
 	}, []);
 
@@ -20,7 +29,9 @@ const Logo = () => {
 			viewBox='0 0 340 72'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'
-			className={styles.logo}>
+			className={styles.logo}
+			onMouseEnter={triggerSpin}
+			onClick={triggerSpin}>
 
 			{/* Элегантный шестиугольник с тонкими линиями */}
 			<g className={`${styles.diamond} ${isSpinning ? styles.spinning : ''}`}>

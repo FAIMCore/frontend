@@ -1,45 +1,56 @@
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '../../contexts/LanguageContext';
 
-interface SEOProps {
-	title?: string;
-	description?: string;
-	keywords?: string;
-	ogImage?: string;
-	twitterImage?: string;
-	url?: string;
-	locale?: string;
-}
+const seoContent = {
+	uk: {
+		title: 'FAIMCore - Студія веб-розробки в Києві | Створення сайтів та веб-додатків',
+		description:
+			'FAIMCore — професійна студія веб-розробки в Україні. Створюємо сучасні веб-сайти, веб-додатки та мобільні застосунки на React, Next.js, TypeScript. Індивідуальний підхід, якісний код, вчасна доставка.',
+		keywords:
+			'веб-розробка Київ, створення сайтів Україна, розробка веб-додатків, React розробка, фронтенд розробка, UI/UX дизайн, мобільні додатки, MVP розробка, веб-студія Київ, FAIMCore',
+		locale: 'uk_UA',
+	},
+	en: {
+		title: 'FAIMCore - Web Development Studio in Kyiv | Websites & Web Apps',
+		description:
+			'FAIMCore is a professional web development studio in Ukraine. We build modern websites, web applications and mobile apps using React, Next.js, TypeScript. Quality code, on-time delivery.',
+		keywords:
+			'web development Kyiv, website creation Ukraine, web app development, React development, frontend development, UI/UX design, mobile apps, MVP development, web studio Ukraine, FAIMCore',
+		locale: 'en_US',
+	},
+};
 
-const SEO = ({
-	title = 'FAIMCore - Web Software Company | Your Core, Our Aim',
-	description = 'FAIMCore is a leading web software company specializing in innovative digital solutions. We transform your vision into reality with cutting-edge technology and expert development.',
-	keywords = 'web development, software company, digital solutions, web applications, custom software, FAIMCore',
-	ogImage = 'https://faimcore.com/og-image.jpg',
-	twitterImage = 'https://faimcore.com/twitter-image.jpg',
-	url = 'https://faimcore.com/',
-	locale = 'en_US',
-}: SEOProps) => {
+const SEO = () => {
+	const { language } = useLanguage();
+	const content = seoContent[language];
+	const url = 'https://faimcore.com/';
+	const ogImage = 'https://faimcore.com/og-image.jpg';
+	const twitterImage = 'https://faimcore.com/twitter-image.jpg';
+
 	return (
 		<Helmet>
+			{/* Language */}
+			<html lang={language} />
+
 			{/* Primary Meta Tags */}
-			<title>{title}</title>
-			<meta name='title' content={title} />
-			<meta name='description' content={description} />
-			<meta name='keywords' content={keywords} />
+			<title>{content.title}</title>
+			<meta name='title' content={content.title} />
+			<meta name='description' content={content.description} />
+			<meta name='keywords' content={content.keywords} />
 
 			{/* Open Graph / Facebook */}
 			<meta property='og:type' content='website' />
 			<meta property='og:url' content={url} />
-			<meta property='og:title' content={title} />
-			<meta property='og:description' content={description} />
+			<meta property='og:title' content={content.title} />
+			<meta property='og:description' content={content.description} />
 			<meta property='og:image' content={ogImage} />
-			<meta property='og:locale' content={locale} />
+			<meta property='og:locale' content={content.locale} />
 
 			{/* Twitter */}
 			<meta name='twitter:card' content='summary_large_image' />
 			<meta name='twitter:url' content={url} />
-			<meta name='twitter:title' content={title} />
-			<meta name='twitter:description' content={description} />
+			<meta name='twitter:title' content={content.title} />
+			<meta name='twitter:description' content={content.description} />
 			<meta name='twitter:image' content={twitterImage} />
 
 			{/* Canonical URL */}

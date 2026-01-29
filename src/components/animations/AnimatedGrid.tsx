@@ -1,8 +1,9 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ArrowDownIcon } from '@radix-ui/react-icons';
 import Navigation from '../ui/Navigation/Navigation';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './AnimatedGrid.module.scss';
 
 const fadeInUp = {
@@ -31,14 +32,14 @@ interface MovingElement {
 const AnimatedGrid = () => {
 	const [elements, setElements] = useState<MovingElement[]>([]);
 	const [gridSize, setGridSize] = useState({ horizontal: 8, vertical: 12 });
-	const [gridSpacing] = useState({ horizontal: 140, vertical: 140 }); // Fixed spacing in pixels
+	const [gridSpacing] = useState({ horizontal: 140, vertical: 140 });
 	const { theme } = useTheme();
+	const { t } = useLanguage();
 
 	useEffect(() => {
 		const width = window.innerWidth;
 		const height = window.innerHeight;
 
-		// Calculate number of lines based on viewport size and fixed spacing
 		const horizontalLines = Math.floor(height / gridSpacing.horizontal);
 		const verticalLines = Math.floor(width / gridSpacing.vertical);
 
@@ -52,7 +53,6 @@ const AnimatedGrid = () => {
 		const generatedElements: MovingElement[] = [];
 		const colors = ['#ffffff'];
 
-		// Adjust number of elements based on grid size
 		const totalLines = gridSize.horizontal + gridSize.vertical;
 		const elementCount = Math.min(Math.floor(totalLines * 0.9), 15);
 
@@ -99,29 +99,29 @@ const AnimatedGrid = () => {
 					className={styles.tagline}
 					variants={fadeInUp}
 					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
-					Web Development Studio
+					{t.hero.tagline}
 				</motion.div>
 				<motion.h1
 					className={styles.mainTitle}
 					variants={fadeInUp}
 					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
-					Building the foundation <br /> of your core business
+					{t.hero.title} <br /> {t.hero.titleLine2}
 				</motion.h1>
 				<motion.p
 					className={styles.subtitle}
 					variants={fadeInUp}
 					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
-					Your Core, Our Aim
+					{t.hero.subtitle}
 				</motion.p>
 				<motion.div
 					className={styles.ctaContainer}
 					variants={fadeInUp}
 					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
 					<button className={styles.ctaButton}>
-						<span>Start Your Project</span>
+						<span>{t.hero.cta}</span>
 						<div className={styles.ctaGlow} />
 					</button>
-					<button className={styles.ctaSecondary}>View Our Work</button>
+					<button className={styles.ctaSecondary}>{t.hero.ctaSecondary}</button>
 				</motion.div>
 			</motion.div>
 
@@ -131,7 +131,7 @@ const AnimatedGrid = () => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 1.5, duration: 0.6 }}>
-				<span>Scroll to explore</span>
+				<span>{t.hero.scroll}</span>
 				<motion.div
 					animate={{ y: [0, 8, 0] }}
 					transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}>
@@ -139,15 +139,12 @@ const AnimatedGrid = () => {
 				</motion.div>
 			</motion.div>
 
-			{/* Pyramid/cone spotlight effect - point at top, expands downward */}
+			{/* Pyramid/cone spotlight effect */}
 			<div className={styles.spotlightPrimary} />
-
-			{/* Additional soft glow layer */}
 			<div className={styles.spotlightSecondary} />
 
 			{/* Grid Lines */}
 			<div className={styles.gridContainer}>
-				{/* Horizontal lines */}
 				{Array.from({ length: gridSize.horizontal }).map((_, i) => (
 					<div
 						key={`h-${i}`}
@@ -158,7 +155,6 @@ const AnimatedGrid = () => {
 					/>
 				))}
 
-				{/* Vertical lines */}
 				{Array.from({ length: gridSize.vertical }).map((_, i) => (
 					<div
 						key={`v-${i}`}
@@ -172,7 +168,7 @@ const AnimatedGrid = () => {
 
 			{/* Moving Elements */}
 			{elements.map((element) => (
-				<MovingElement
+				<MovingElementComponent
 					key={element.id}
 					element={element}
 					gridSpacing={gridSpacing}
@@ -187,10 +183,9 @@ interface MovingElementProps {
 	gridSpacing: { horizontal: number; vertical: number };
 }
 
-const MovingElement = ({ element, gridSpacing }: MovingElementProps) => {
+const MovingElementComponent = ({ element, gridSpacing }: MovingElementProps) => {
 	const isHorizontal = element.type === 'horizontal';
 
-	// Calculate line position in pixels
 	const linePositionPx = isHorizontal
 		? gridSpacing.horizontal * (element.lineIndex + 1)
 		: gridSpacing.vertical * (element.lineIndex + 1);

@@ -1,31 +1,22 @@
 import { motion } from 'framer-motion';
 import { EnvelopeClosedIcon, ChatBubbleIcon, GlobeIcon } from '@radix-ui/react-icons';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Contact.module.scss';
 
-const contactInfo = [
-	{
-		icon: EnvelopeClosedIcon,
-		title: 'Email Us',
-		value: 'hello@faimcore.com',
-		description: 'We reply within 24 hours',
-	},
-	{
-		icon: ChatBubbleIcon,
-		title: 'Live Chat',
-		value: 'Start a conversation',
-		description: 'Available Mon-Fri, 9am-6pm',
-	},
-	{
-		icon: GlobeIcon,
-		title: 'Location',
-		value: 'Kyiv, Ukraine',
-		description: 'Working worldwide',
-	},
-];
+const contactIcons = [EnvelopeClosedIcon, ChatBubbleIcon, GlobeIcon];
+const contactKeys = ['email', 'chat', 'location'] as const;
 
 const Contact = () => {
 	const { theme } = useTheme();
+	const { t } = useLanguage();
+
+	const contactInfo = contactKeys.map((key, index) => ({
+		icon: contactIcons[index],
+		title: t.contact.info[key].title,
+		value: t.contact.info[key].value,
+		description: t.contact.info[key].description,
+	}));
 
 	return (
 		<section
@@ -39,14 +30,9 @@ const Contact = () => {
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, margin: '-100px' }}
 						transition={{ duration: 0.6 }}>
-						<span className={styles.label}>Contact Us</span>
-						<h2 className={styles.title}>
-							Let's build something amazing together
-						</h2>
-						<p className={styles.description}>
-							Ready to transform your digital presence? Get in touch with us
-							today and let's discuss how we can help bring your vision to life.
-						</p>
+						<span className={styles.label}>{t.contact.label}</span>
+						<h2 className={styles.title}>{t.contact.title}</h2>
+						<p className={styles.description}>{t.contact.description}</p>
 
 						<div className={styles.contactItems}>
 							{contactInfo.map((item) => (
@@ -76,51 +62,51 @@ const Contact = () => {
 							<div className={styles.formRow}>
 								<div className={styles.formGroup}>
 									<label htmlFor="name" className={styles.formLabel}>
-										Name
+										{t.contact.form.name}
 									</label>
 									<input
 										type="text"
 										id="name"
-										placeholder="John Doe"
+										placeholder={t.contact.form.namePlaceholder}
 										className={styles.formInput}
 									/>
 								</div>
 								<div className={styles.formGroup}>
 									<label htmlFor="email" className={styles.formLabel}>
-										Email
+										{t.contact.form.email}
 									</label>
 									<input
 										type="email"
 										id="email"
-										placeholder="john@example.com"
+										placeholder={t.contact.form.emailPlaceholder}
 										className={styles.formInput}
 									/>
 								</div>
 							</div>
 							<div className={styles.formGroup}>
 								<label htmlFor="subject" className={styles.formLabel}>
-									Subject
+									{t.contact.form.subject}
 								</label>
 								<input
 									type="text"
 									id="subject"
-									placeholder="Project inquiry"
+									placeholder={t.contact.form.subjectPlaceholder}
 									className={styles.formInput}
 								/>
 							</div>
 							<div className={styles.formGroup}>
 								<label htmlFor="message" className={styles.formLabel}>
-									Message
+									{t.contact.form.message}
 								</label>
 								<textarea
 									id="message"
 									rows={5}
-									placeholder="Tell us about your project..."
+									placeholder={t.contact.form.messagePlaceholder}
 									className={styles.formTextarea}
 								/>
 							</div>
 							<button type="submit" className={styles.submitButton}>
-								Send Message
+								{t.contact.form.submit}
 							</button>
 						</form>
 					</motion.div>

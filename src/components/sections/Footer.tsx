@@ -6,29 +6,9 @@ import {
 	InstagramLogoIcon,
 } from '@radix-ui/react-icons';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import Logo from '../ui/Logo';
 import styles from './Footer.module.scss';
-
-const footerLinks = {
-	company: [
-		{ label: 'About', href: '#about' },
-		{ label: 'Team', href: '#team' },
-		{ label: 'Careers', href: '#' },
-		{ label: 'Blog', href: '#blog' },
-	],
-	services: [
-		{ label: 'Web Development', href: '#services' },
-		{ label: 'UI/UX Design', href: '#services' },
-		{ label: 'Mobile Apps', href: '#services' },
-		{ label: 'MVP Development', href: '#services' },
-	],
-	resources: [
-		{ label: 'Documentation', href: '#' },
-		{ label: 'Help Center', href: '#' },
-		{ label: 'Privacy Policy', href: '#' },
-		{ label: 'Terms of Service', href: '#' },
-	],
-};
 
 const socialLinks = [
 	{ icon: LinkedInLogoIcon, href: '#', label: 'LinkedIn' },
@@ -39,6 +19,30 @@ const socialLinks = [
 
 const Footer = () => {
 	const { theme } = useTheme();
+	const { t } = useLanguage();
+
+	const footerLinks = {
+		company: [
+			{ label: t.footer.links.about, href: '#about' },
+			{ label: t.footer.links.team, href: '#team' },
+			{ label: t.footer.links.careers, href: '#' },
+			{ label: t.footer.links.blog, href: '#blog' },
+		],
+		services: [
+			{ label: t.footer.links.webDev, href: '#services' },
+			{ label: t.footer.links.uiux, href: '#services' },
+			{ label: t.footer.links.mobile, href: '#services' },
+			{ label: t.footer.links.mvp, href: '#services' },
+		],
+		resources: [
+			{ label: t.footer.links.docs, href: '#' },
+			{ label: t.footer.links.help, href: '#' },
+			{ label: t.footer.links.privacy, href: '#' },
+			{ label: t.footer.links.terms, href: '#' },
+		],
+	};
+
+	const currentYear = new Date().getFullYear();
 
 	return (
 		<footer
@@ -52,10 +56,7 @@ const Footer = () => {
 						viewport={{ once: true }}
 						transition={{ duration: 0.5 }}>
 						<Logo />
-						<p className={styles.brandDescription}>
-							Building exceptional digital experiences that transform businesses
-							and delight users.
-						</p>
+						<p className={styles.brandDescription}>{t.footer.description}</p>
 						<div className={styles.social}>
 							{socialLinks.map((link) => (
 								<a
@@ -76,7 +77,7 @@ const Footer = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: 0.1 }}>
-							<h4 className={styles.linkTitle}>Company</h4>
+							<h4 className={styles.linkTitle}>{t.footer.company}</h4>
 							<ul className={styles.linkList}>
 								{footerLinks.company.map((link) => (
 									<li key={link.label}>
@@ -94,7 +95,7 @@ const Footer = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: 0.2 }}>
-							<h4 className={styles.linkTitle}>Services</h4>
+							<h4 className={styles.linkTitle}>{t.footer.services}</h4>
 							<ul className={styles.linkList}>
 								{footerLinks.services.map((link) => (
 									<li key={link.label}>
@@ -112,7 +113,7 @@ const Footer = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: 0.3 }}>
-							<h4 className={styles.linkTitle}>Resources</h4>
+							<h4 className={styles.linkTitle}>{t.footer.resources}</h4>
 							<ul className={styles.linkList}>
 								{footerLinks.resources.map((link) => (
 									<li key={link.label}>
@@ -128,11 +129,9 @@ const Footer = () => {
 
 				<div className={styles.bottom}>
 					<p className={styles.copyright}>
-						© {new Date().getFullYear()} FAIMCore. All rights reserved.
+						{t.footer.copyright.replace('{year}', String(currentYear))}
 					</p>
-					<p className={styles.madeWith}>
-						Made with passion in Ukraine
-					</p>
+					<p className={styles.madeWith}>{t.footer.madeWith}</p>
 				</div>
 			</div>
 		</footer>

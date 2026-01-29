@@ -8,49 +8,21 @@ import {
 	LightningBoltIcon,
 } from '@radix-ui/react-icons';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Services.module.scss';
 
-const services = [
-	{
-		icon: CodeIcon,
-		title: 'Web Development',
-		description:
-			'Custom web applications built with modern technologies like React, Next.js, and TypeScript for optimal performance.',
-	},
-	{
-		icon: DesktopIcon,
-		title: 'UI/UX Design',
-		description:
-			'Beautiful, intuitive interfaces designed with user experience at the forefront, ensuring engagement and conversions.',
-	},
-	{
-		icon: MobileIcon,
-		title: 'Mobile Apps',
-		description:
-			'Cross-platform mobile applications using React Native that deliver native-like experiences on iOS and Android.',
-	},
-	{
-		icon: RocketIcon,
-		title: 'MVP Development',
-		description:
-			'Rapid prototyping and MVP development to help startups validate ideas and get to market quickly.',
-	},
-	{
-		icon: GearIcon,
-		title: 'API Integration',
-		description:
-			'Seamless integration with third-party services, payment gateways, and custom API development.',
-	},
-	{
-		icon: LightningBoltIcon,
-		title: 'Performance Optimization',
-		description:
-			'Speed optimization, SEO improvements, and technical audits to maximize your digital presence.',
-	},
-];
+const serviceIcons = [CodeIcon, DesktopIcon, MobileIcon, RocketIcon, GearIcon, LightningBoltIcon];
+const serviceKeys = ['webDev', 'uiux', 'mobile', 'mvp', 'api', 'performance'] as const;
 
 const Services = () => {
 	const { theme } = useTheme();
+	const { t } = useLanguage();
+
+	const services = serviceKeys.map((key, index) => ({
+		icon: serviceIcons[index],
+		title: t.services.items[key].title,
+		description: t.services.items[key].description,
+	}));
 
 	return (
 		<section
@@ -63,18 +35,15 @@ const Services = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: '-100px' }}
 					transition={{ duration: 0.6 }}>
-					<span className={styles.label}>Our Services</span>
-					<h2 className={styles.title}>What we do best</h2>
-					<p className={styles.subtitle}>
-						We offer a comprehensive range of web development services to help
-						your business thrive in the digital landscape.
-					</p>
+					<span className={styles.label}>{t.services.label}</span>
+					<h2 className={styles.title}>{t.services.title}</h2>
+					<p className={styles.subtitle}>{t.services.subtitle}</p>
 				</motion.div>
 
 				<div className={styles.grid}>
 					{services.map((service, index) => (
 						<motion.div
-							key={service.title}
+							key={serviceKeys[index]}
 							className={styles.card}
 							initial={{ opacity: 0, y: 40 }}
 							whileInView={{ opacity: 1, y: 0 }}

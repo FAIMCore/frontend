@@ -1,27 +1,23 @@
-import { useState } from 'react';
 import { GlobeIcon, SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import { useTheme } from '../../../contexts/ThemeContext';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import Logo from '../Logo';
 import styles from './Navigation.module.scss';
 
 const Navigation = () => {
-	const [language, setLanguage] = useState<'en' | 'uk'>('en');
 	const { theme, toggleTheme } = useTheme();
-
-	const toggleLanguage = () => {
-		setLanguage((prev) => (prev === 'en' ? 'uk' : 'en'));
-	};
+	const { language, toggleLanguage, t } = useLanguage();
 
 	const leftMenuItems = [
-		{ label: 'About', href: '#about' },
-		{ label: 'Services', href: '#services' },
-		{ label: 'Portfolio', href: '#portfolio' },
+		{ label: t.nav.about, href: '#about' },
+		{ label: t.nav.services, href: '#services' },
+		{ label: t.nav.portfolio, href: '#portfolio' },
 	];
 
 	const rightMenuItems = [
-		{ label: 'Team', href: '#team' },
-		{ label: 'Blog', href: '#blog' },
-		{ label: 'Contact', href: '#contact' },
+		{ label: t.nav.team, href: '#team' },
+		{ label: t.nav.blog, href: '#blog' },
+		{ label: t.nav.contact, href: '#contact' },
 	];
 
 	return (

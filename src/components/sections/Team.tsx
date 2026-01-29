@@ -1,45 +1,29 @@
 import { motion } from 'framer-motion';
 import { LinkedInLogoIcon, GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Team.module.scss';
 
-const team = [
-	{
-		id: 1,
-		name: 'Igor Fedianin',
-		role: 'Founder & Lead Developer',
-		bio: 'Full-stack developer with 5+ years of experience building scalable web applications.',
-		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-		social: { linkedin: '#', github: '#', twitter: '#' },
-	},
-	{
-		id: 2,
-		name: 'Maria Kovalenko',
-		role: 'UI/UX Designer',
-		bio: 'Creative designer passionate about crafting intuitive and beautiful user experiences.',
-		image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
-		social: { linkedin: '#', github: '#', twitter: '#' },
-	},
-	{
-		id: 3,
-		name: 'Oleksandr Petrenko',
-		role: 'Backend Developer',
-		bio: 'Expert in building robust APIs and database architectures for high-traffic applications.',
-		image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-		social: { linkedin: '#', github: '#', twitter: '#' },
-	},
-	{
-		id: 4,
-		name: 'Anna Shevchenko',
-		role: 'Frontend Developer',
-		bio: 'React specialist focused on creating performant and accessible web interfaces.',
-		image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-		social: { linkedin: '#', github: '#', twitter: '#' },
-	},
+const memberKeys = ['igor', 'maria', 'oleksandr', 'anna'] as const;
+const memberImages = [
+	'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
 ];
 
 const Team = () => {
 	const { theme } = useTheme();
+	const { t } = useLanguage();
+
+	const team = memberKeys.map((key, index) => ({
+		id: index + 1,
+		name: t.team.members[key].name,
+		role: t.team.members[key].role,
+		bio: t.team.members[key].bio,
+		image: memberImages[index],
+		social: { linkedin: '#', github: '#', twitter: '#' },
+	}));
 
 	return (
 		<section
@@ -52,12 +36,9 @@ const Team = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: '-100px' }}
 					transition={{ duration: 0.6 }}>
-					<span className={styles.label}>Our Team</span>
-					<h2 className={styles.title}>Meet the experts</h2>
-					<p className={styles.subtitle}>
-						A talented team of developers and designers committed to delivering
-						exceptional digital solutions.
-					</p>
+					<span className={styles.label}>{t.team.label}</span>
+					<h2 className={styles.title}>{t.team.title}</h2>
+					<p className={styles.subtitle}>{t.team.subtitle}</p>
 				</motion.div>
 
 				<div className={styles.grid}>

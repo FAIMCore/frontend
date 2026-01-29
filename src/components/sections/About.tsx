@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './About.module.scss';
-
-const stats = [
-	{ number: '50+', label: 'Projects Delivered' },
-	{ number: '30+', label: 'Happy Clients' },
-	{ number: '5+', label: 'Years Experience' },
-	{ number: '99%', label: 'Client Satisfaction' },
-];
 
 const About = () => {
 	const { theme } = useTheme();
+	const { t } = useLanguage();
+
+	const stats = [
+		{ number: '50+', label: t.about.stats.projects },
+		{ number: '30+', label: t.about.stats.clients },
+		{ number: '5+', label: t.about.stats.experience },
+		{ number: '99%', label: t.about.stats.satisfaction },
+	];
 
 	return (
 		<section
@@ -23,22 +25,10 @@ const About = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: '-100px' }}
 					transition={{ duration: 0.6 }}>
-					<span className={styles.label}>About Us</span>
-					<h2 className={styles.title}>
-						We craft digital experiences that drive business growth
-					</h2>
-					<p className={styles.description}>
-						FAIMCore is a web development studio founded with a mission to help
-						businesses establish a powerful digital presence. We combine creative
-						design with cutting-edge technology to build web applications that
-						not only look stunning but also perform exceptionally.
-					</p>
-					<p className={styles.description}>
-						Our team of passionate developers and designers work closely with
-						clients to understand their unique needs and deliver tailored
-						solutions that exceed expectations. From startups to enterprises,
-						we've helped businesses across industries achieve their digital goals.
-					</p>
+					<span className={styles.label}>{t.about.label}</span>
+					<h2 className={styles.title}>{t.about.title}</h2>
+					<p className={styles.description}>{t.about.description1}</p>
+					<p className={styles.description}>{t.about.description2}</p>
 				</motion.div>
 
 				<motion.div

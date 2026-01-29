@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage - Ukrainian (default) -->
+  <url>
+    <loc>https://faimcore.com/</loc>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://faimcore.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://faimcore.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://faimcore.com/"/>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage - English -->
+  <url>
+    <loc>https://faimcore.com/?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://faimcore.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://faimcore.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://faimcore.com/"/>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sections (anchors for SPA) -->
+  <url>
+    <loc>https://faimcore.com/#about</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#services</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#portfolio</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#team</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#blog</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#contact</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

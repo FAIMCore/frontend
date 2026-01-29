@@ -1,3 +1,9 @@
+// Warm Family Color Palette
+// Dark: #1a1612 → #0f0d0a (warm charcoal)
+// Light: #faf7f2 → #f5efe6 (warm cream)
+// Accent: #c4956a (warm amber), #b8845c (caramel)
+// Text: #2d2620 (warm brown), #f5efe6 (cream)
+
 .container {
 	position: relative;
 	width: 100%;
@@ -6,11 +12,11 @@
 	transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 	&.light {
-		background: linear-gradient(180deg, #fff8e7 0%, #ffe9c3 50%, #ffd699 100%);
+		background: linear-gradient(180deg, #faf7f2 0%, #f5efe6 50%, #efe7db 100%);
 	}
 
 	&.dark {
-		background: linear-gradient(180deg, #0a0a1a 0%, #080819 50%, #050510 100%);
+		background: linear-gradient(180deg, #1a1612 0%, #141110 50%, #0f0d0a 100%);
 	}
 }
 
@@ -24,7 +30,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 16px;
+	gap: 20px;
 }
 
 .tagline {
@@ -33,30 +39,29 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
-	color: rgba(175, 193, 247, 0.9);
-	padding: 8px 20px;
-	border: 1px solid rgba(175, 193, 247, 0.3);
+	color: #c4956a;
+	padding: 10px 24px;
+	border: 1px solid rgba(196, 149, 106, 0.3);
 	border-radius: 30px;
-	backdrop-filter: blur(10px);
-	background: rgba(175, 193, 247, 0.08);
+	background: rgba(196, 149, 106, 0.08);
 
 	.light & {
-		color: #5a4a3a;
-		border-color: rgba(90, 74, 58, 0.3);
-		background: rgba(244, 196, 48, 0.15);
+		color: #8b6914;
+		border-color: rgba(139, 105, 20, 0.25);
+		background: rgba(196, 149, 106, 0.1);
 	}
 }
 
 .mainTitle {
 	font-family: 'Inter', sans-serif;
 	font-size: 72px;
-	font-weight: 800;
+	font-weight: 700;
 	line-height: 1.1;
 	background: linear-gradient(
 		180deg,
-		#ffffff 0%,
-		#afc1f7 40%,
-		#8b99c4 100%
+		#f5efe6 0%,
+		#d4b896 50%,
+		#c4956a 100%
 	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -68,9 +73,9 @@
 	.light & {
 		background: linear-gradient(
 			180deg,
-			#2d2d2d 0%,
-			#3d3227 40%,
-			#5a4a3a 100%
+			#2d2620 0%,
+			#4a3c30 50%,
+			#6b5a48 100%
 		);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -80,14 +85,15 @@
 
 .subtitle {
 	font-family: 'Inter', sans-serif;
-	font-size: 24px;
-	font-weight: 500;
-	color: rgba(255, 255, 255, 0.7);
-	letter-spacing: 0.05em;
+	font-size: 22px;
+	font-weight: 400;
+	color: rgba(245, 239, 230, 0.7);
+	letter-spacing: 0.02em;
 	margin: 0;
+	max-width: 500px;
 
 	.light & {
-		color: rgba(61, 50, 39, 0.7);
+		color: rgba(45, 38, 32, 0.65);
 	}
 }
 
@@ -95,7 +101,7 @@
 	display: flex;
 	align-items: center;
 	gap: 16px;
-	margin-top: 24px;
+	margin-top: 32px;
 }
 
 .ctaButton {
@@ -103,35 +109,35 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 16px 32px;
+	padding: 18px 36px;
 	font-family: 'Inter', sans-serif;
 	font-size: 16px;
 	font-weight: 600;
-	color: #080819;
-	background: linear-gradient(135deg, #afc1f7 0%, #8b99c4 100%);
+	color: #1a1612;
+	background: linear-gradient(135deg, #d4b896 0%, #c4956a 100%);
 	border: none;
-	border-radius: 14px;
+	border-radius: 16px;
 	cursor: pointer;
 	overflow: hidden;
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: 0 4px 20px rgba(175, 193, 247, 0.3),
-		0 0 40px rgba(175, 193, 247, 0.1);
+	box-shadow: 0 4px 24px rgba(196, 149, 106, 0.25),
+		0 0 0 1px rgba(196, 149, 106, 0.1);
 
 	.light & {
-		background: linear-gradient(135deg, #f4c430 0%, #e6a800 100%);
-		color: #2d2d2d;
-		box-shadow: 0 4px 20px rgba(244, 196, 48, 0.3),
-			0 0 40px rgba(244, 196, 48, 0.1);
+		background: linear-gradient(135deg, #c4956a 0%, #b8845c 100%);
+		color: #ffffff;
+		box-shadow: 0 4px 24px rgba(196, 149, 106, 0.3),
+			0 0 0 1px rgba(196, 149, 106, 0.2);
 	}
 
 	&:hover {
 		transform: translateY(-3px) scale(1.02);
-		box-shadow: 0 8px 30px rgba(175, 193, 247, 0.4),
-			0 0 60px rgba(175, 193, 247, 0.2);
+		box-shadow: 0 8px 32px rgba(196, 149, 106, 0.4),
+			0 0 0 1px rgba(196, 149, 106, 0.2);
 
 		.light & {
-			box-shadow: 0 8px 30px rgba(244, 196, 48, 0.4),
-				0 0 60px rgba(244, 196, 48, 0.2);
+			box-shadow: 0 8px 32px rgba(196, 149, 106, 0.45),
+				0 0 0 1px rgba(196, 149, 106, 0.3);
 		}
 	}
 
@@ -153,7 +159,7 @@
 	height: 100%;
 	background: radial-gradient(
 		circle,
-		rgba(255, 255, 255, 0.3) 0%,
+		rgba(255, 255, 255, 0.25) 0%,
 		transparent 70%
 	);
 	transform: translate(-50%, -50%) scale(0);
@@ -168,33 +174,32 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 16px 32px;
+	padding: 18px 36px;
 	font-family: 'Inter', sans-serif;
 	font-size: 16px;
 	font-weight: 600;
-	color: rgba(255, 255, 255, 0.9);
-	background: rgba(255, 255, 255, 0.06);
-	border: 1px solid rgba(255, 255, 255, 0.15);
-	border-radius: 14px;
+	color: rgba(245, 239, 230, 0.9);
+	background: rgba(245, 239, 230, 0.06);
+	border: 1px solid rgba(196, 149, 106, 0.25);
+	border-radius: 16px;
 	cursor: pointer;
-	backdrop-filter: blur(10px);
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.light & {
-		color: #3d3227;
-		background: rgba(0, 0, 0, 0.04);
-		border-color: rgba(0, 0, 0, 0.15);
+		color: #4a3c30;
+		background: rgba(196, 149, 106, 0.08);
+		border-color: rgba(196, 149, 106, 0.3);
 	}
 
 	&:hover {
 		transform: translateY(-3px);
-		background: rgba(255, 255, 255, 0.1);
-		border-color: rgba(255, 255, 255, 0.25);
-		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+		background: rgba(196, 149, 106, 0.12);
+		border-color: rgba(196, 149, 106, 0.4);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
 		.light & {
-			background: rgba(0, 0, 0, 0.08);
-			border-color: rgba(0, 0, 0, 0.25);
+			background: rgba(196, 149, 106, 0.15);
+			border-color: rgba(196, 149, 106, 0.5);
 		}
 	}
 
@@ -213,7 +218,7 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 8px;
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(196, 149, 106, 0.6);
 	font-family: 'Inter', sans-serif;
 	font-size: 12px;
 	font-weight: 500;
@@ -221,123 +226,94 @@
 	text-transform: uppercase;
 
 	.light & {
-		color: rgba(61, 50, 39, 0.5);
+		color: rgba(139, 105, 20, 0.5);
 	}
 }
 
 .scrollIcon {
 	width: 20px;
 	height: 20px;
-	color: rgba(175, 193, 247, 0.7);
+	color: #c4956a;
 
 	.light & {
-		color: rgba(244, 196, 48, 0.8);
+		color: #b8845c;
 	}
 }
 
+// Organic warm glow instead of spotlight
 .spotlightPrimary {
 	position: absolute;
-	top: 0;
+	top: 20%;
 	left: 50%;
-	width: 0;
-	height: 0;
+	width: 800px;
+	height: 800px;
 	transform: translateX(-50%);
-	border-left: 45vw solid transparent;
-	border-right: 45vw solid transparent;
-	border-bottom: 100vh solid rgba(175, 193, 247, 0.03);
-	pointer-events: none;
-	filter: blur(80px);
-	opacity: 0.9;
-	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-	.light & {
-		border-bottom-color: rgba(244, 196, 48, 0.08);
-		filter: blur(100px);
-	}
-}
-
-.spotlightSecondary {
-	position: absolute;
-	top: -10%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	transform: translateX(-50%);
-	border-left: 30vw solid transparent;
-	border-right: 30vw solid transparent;
-	border-bottom: 80vh solid rgba(255, 255, 255, 0.05);
+	background: radial-gradient(
+		ellipse at center,
+		rgba(196, 149, 106, 0.08) 0%,
+		rgba(196, 149, 106, 0.03) 40%,
+		transparent 70%
+	);
 	pointer-events: none;
 	filter: blur(60px);
 	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.light & {
-		border-bottom-color: rgba(255, 255, 255, 0.4);
-		filter: blur(80px);
+		background: radial-gradient(
+			ellipse at center,
+			rgba(196, 149, 106, 0.15) 0%,
+			rgba(196, 149, 106, 0.05) 40%,
+			transparent 70%
+		);
 	}
 }
 
+.spotlightSecondary {
+	position: absolute;
+	top: 60%;
+	left: 30%;
+	width: 500px;
+	height: 500px;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(212, 184, 150, 0.06) 0%,
+		transparent 60%
+	);
+	pointer-events: none;
+	filter: blur(80px);
+	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+	.light & {
+		background: radial-gradient(
+			ellipse at center,
+			rgba(196, 149, 106, 0.1) 0%,
+			transparent 60%
+		);
+	}
+}
+
+// Hide the tech grid
 .gridContainer {
-	position: absolute;
-	inset: 0;
-	opacity: 0.6;
+	display: none;
 }
 
-.horizontalLine {
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	background: linear-gradient(
-		90deg,
-		transparent 0%,
-		rgba(100, 100, 120, 0.25) 20%,
-		rgba(100, 100, 120, 0.25) 80%,
-		transparent 100%
-	);
-	transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-	.light & {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(139, 153, 196, 0.35) 20%,
-			rgba(139, 153, 196, 0.35) 80%,
-			transparent 100%
-		);
-	}
-}
-
+.horizontalLine,
 .verticalLine {
-	position: absolute;
-	height: 100%;
-	width: 1px;
-	background: linear-gradient(
-		180deg,
-		transparent 0%,
-		rgba(100, 100, 120, 0.25) 20%,
-		rgba(100, 100, 120, 0.25) 80%,
-		transparent 100%
-	);
-	transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-	.light & {
-		background: linear-gradient(
-			180deg,
-			transparent 0%,
-			rgba(139, 153, 196, 0.35) 20%,
-			rgba(139, 153, 196, 0.35) 80%,
-			transparent 100%
-		);
-	}
+	display: none;
 }
 
+// Soft floating elements instead of moving dots
 .movingElement {
 	position: absolute;
-	width: 2px;
-	height: 2px;
+	width: 6px;
+	height: 6px;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 	will-change: transform;
-	opacity: 0.6;
+	opacity: 0.4;
+	background: rgba(196, 149, 106, 0.6) !important;
+	box-shadow: 0 0 20px rgba(196, 149, 106, 0.3) !important;
+	filter: blur(1px);
 }
 
 // Responsive design
@@ -355,16 +331,16 @@
 	.centerContent {
 		top: 50%;
 		padding: 0 20px;
-		gap: 12px;
+		gap: 16px;
 	}
 
 	.tagline {
 		font-size: 12px;
-		padding: 6px 16px;
+		padding: 8px 18px;
 	}
 
 	.mainTitle {
-		font-size: 38px;
+		font-size: 36px;
 		line-height: 1.2;
 		white-space: normal;
 		padding: 0 20px;
@@ -375,26 +351,38 @@
 	}
 
 	.subtitle {
-		font-size: 18px;
+		font-size: 17px;
+		max-width: 320px;
 	}
 
 	.ctaContainer {
 		flex-direction: column;
 		gap: 12px;
 		width: 100%;
-		max-width: 280px;
+		max-width: 300px;
+		margin-top: 24px;
 	}
 
 	.ctaButton,
 	.ctaSecondary {
 		width: 100%;
-		padding: 14px 24px;
+		padding: 16px 28px;
 		font-size: 15px;
 	}
 
 	.scrollIndicator {
 		bottom: 30px;
 		font-size: 11px;
+	}
+
+	.spotlightPrimary {
+		width: 400px;
+		height: 400px;
+	}
+
+	.spotlightSecondary {
+		width: 300px;
+		height: 300px;
 	}
 }
 
@@ -406,7 +394,7 @@
 
 	.tagline {
 		font-size: 11px;
-		padding: 5px 14px;
+		padding: 6px 14px;
 	}
 
 	.mainTitle {
@@ -415,21 +403,18 @@
 	}
 
 	.subtitle {
-		font-size: 16px;
+		font-size: 15px;
+		max-width: 280px;
 	}
 
 	.ctaButton,
 	.ctaSecondary {
-		padding: 12px 20px;
+		padding: 14px 24px;
 		font-size: 14px;
-		border-radius: 12px;
+		border-radius: 14px;
 	}
 
 	.scrollIndicator {
 		bottom: 24px;
-	}
-
-	.movingElement {
-		box-shadow: 0 0 6px var(--element-color), 0 0 12px var(--element-color) !important;
 	}
 }

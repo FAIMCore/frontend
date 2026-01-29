@@ -16,60 +16,60 @@
 
 	// Dark theme (default)
 	&.dark {
-		background: linear-gradient(135deg, rgba(175, 193, 247, 0.15) 0%, rgba(139, 153, 196, 0.1) 100%);
+		background: linear-gradient(135deg, rgba(196, 149, 106, 0.15) 0%, rgba(184, 132, 92, 0.1) 100%);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid rgba(175, 193, 247, 0.2);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-			0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+		border: 1px solid rgba(196, 149, 106, 0.2);
+		box-shadow: 0 8px 32px rgba(15, 13, 10, 0.3),
+			0 0 0 1px rgba(245, 239, 230, 0.05) inset;
 
 		.icon {
-			color: rgba(255, 255, 255, 0.9);
+			color: rgba(245, 239, 230, 0.9);
 		}
 
 		.glow {
-			background: radial-gradient(circle, rgba(175, 193, 247, 0.4) 0%, transparent 70%);
+			background: radial-gradient(circle, rgba(196, 149, 106, 0.4) 0%, transparent 70%);
 		}
 
 		&:hover {
-			background: linear-gradient(135deg, rgba(175, 193, 247, 0.25) 0%, rgba(139, 153, 196, 0.2) 100%);
-			border-color: rgba(175, 193, 247, 0.4);
-			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-				0 0 20px rgba(175, 193, 247, 0.2),
-				0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+			background: linear-gradient(135deg, rgba(196, 149, 106, 0.25) 0%, rgba(184, 132, 92, 0.2) 100%);
+			border-color: rgba(196, 149, 106, 0.4);
+			box-shadow: 0 12px 40px rgba(15, 13, 10, 0.4),
+				0 0 20px rgba(196, 149, 106, 0.2),
+				0 0 0 1px rgba(245, 239, 230, 0.1) inset;
 
 			.icon {
-				color: #fff;
+				color: #f5efe6;
 			}
 		}
 	}
 
 	// Light theme
 	&.light {
-		background: linear-gradient(135deg, rgba(244, 196, 48, 0.15) 0%, rgba(230, 168, 0, 0.1) 100%);
+		background: linear-gradient(135deg, rgba(196, 149, 106, 0.15) 0%, rgba(184, 132, 92, 0.1) 100%);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid rgba(244, 196, 48, 0.25);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+		border: 1px solid rgba(196, 149, 106, 0.25);
+		box-shadow: 0 8px 32px rgba(45, 38, 32, 0.1),
 			0 0 0 1px rgba(255, 255, 255, 0.5) inset;
 
 		.icon {
-			color: #3d3227;
+			color: #4a3c30;
 		}
 
 		.glow {
-			background: radial-gradient(circle, rgba(244, 196, 48, 0.4) 0%, transparent 70%);
+			background: radial-gradient(circle, rgba(196, 149, 106, 0.4) 0%, transparent 70%);
 		}
 
 		&:hover {
-			background: linear-gradient(135deg, rgba(244, 196, 48, 0.3) 0%, rgba(230, 168, 0, 0.2) 100%);
-			border-color: rgba(244, 196, 48, 0.5);
-			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
-				0 0 20px rgba(244, 196, 48, 0.3),
+			background: linear-gradient(135deg, rgba(196, 149, 106, 0.3) 0%, rgba(184, 132, 92, 0.2) 100%);
+			border-color: rgba(196, 149, 106, 0.5);
+			box-shadow: 0 12px 40px rgba(45, 38, 32, 0.15),
+				0 0 20px rgba(196, 149, 106, 0.3),
 				0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 
 			.icon {
-				color: #1a1a1a;
+				color: #2d2620;
 			}
 		}
 	}

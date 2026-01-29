@@ -1,3 +1,5 @@
+// Warm Family Navigation Styles
+
 .navigation {
 	position: absolute;
 	top: 30px;
@@ -11,15 +13,15 @@
 	border-radius: 20px;
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
-		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	background: rgba(26, 22, 18, 0.6);
+	border: 1px solid rgba(196, 149, 106, 0.15);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+		inset 0 1px 0 rgba(255, 255, 255, 0.03);
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
 	&.light {
-		background: rgba(255, 255, 255, 0.75);
-		border: 1px solid rgba(0, 0, 0, 0.06);
+		background: rgba(255, 255, 255, 0.8);
+		border: 1px solid rgba(196, 149, 106, 0.2);
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
 			inset 0 1px 0 rgba(255, 255, 255, 0.8);
 	}
@@ -43,7 +45,7 @@
 	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 	font-weight: 500;
-	color: rgba(255, 255, 255, 0.85);
+	color: rgba(245, 239, 230, 0.85);
 	text-decoration: none;
 	letter-spacing: 0.02em;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,14 +54,14 @@
 	white-space: nowrap;
 
 	.navigation.light & {
-		color: #3d3227;
+		color: #4a3c30;
 	}
 
 	&:hover {
-		color: #fff;
+		color: #d4b896;
 
 		.navigation.light & {
-			color: #1a1a1a;
+			color: #8b6914;
 		}
 	}
 
@@ -71,12 +73,12 @@
 		transform: translateX(-50%);
 		width: 0;
 		height: 2px;
-		background: linear-gradient(90deg, #afc1f7 0%, #8b99c4 100%);
+		background: linear-gradient(90deg, #c4956a 0%, #d4b896 100%);
 		border-radius: 2px;
 		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 		.navigation.light & {
-			background: linear-gradient(90deg, #f4c430 0%, #e6a800 100%);
+			background: linear-gradient(90deg, #b8845c 0%, #c4956a 100%);
 		}
 	}
 
@@ -88,11 +90,11 @@
 .divider {
 	width: 1px;
 	height: 24px;
-	background: rgba(255, 255, 255, 0.15);
+	background: rgba(196, 149, 106, 0.2);
 	margin: 0 4px;
 
 	.navigation.light & {
-		background: rgba(0, 0, 0, 0.1);
+		background: rgba(196, 149, 106, 0.25);
 	}
 }
 
@@ -109,28 +111,28 @@
 	width: 36px;
 	height: 36px;
 	padding: 0;
-	background: rgba(255, 255, 255, 0.08);
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(196, 149, 106, 0.1);
+	border: 1px solid rgba(196, 149, 106, 0.2);
 	border-radius: 10px;
-	color: rgba(255, 255, 255, 0.9);
+	color: #c4956a;
 	cursor: pointer;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.navigation.light & {
-		background: rgba(0, 0, 0, 0.04);
-		border-color: rgba(0, 0, 0, 0.1);
-		color: #3d3227;
+		background: rgba(196, 149, 106, 0.08);
+		border-color: rgba(196, 149, 106, 0.2);
+		color: #8b6914;
 	}
 
 	&:hover {
-		background: rgba(255, 255, 255, 0.15);
-		border-color: rgba(255, 255, 255, 0.25);
+		background: rgba(196, 149, 106, 0.2);
+		border-color: rgba(196, 149, 106, 0.35);
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 4px 12px rgba(196, 149, 106, 0.15);
 
 		.navigation.light & {
-			background: rgba(0, 0, 0, 0.08);
-			border-color: rgba(0, 0, 0, 0.15);
+			background: rgba(196, 149, 106, 0.15);
+			border-color: rgba(196, 149, 106, 0.3);
 		}
 	}
 
@@ -149,10 +151,10 @@
 	align-items: center;
 	gap: 6px;
 	padding: 8px 12px;
-	background: rgba(255, 255, 255, 0.08);
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(196, 149, 106, 0.1);
+	border: 1px solid rgba(196, 149, 106, 0.2);
 	border-radius: 10px;
-	color: rgba(255, 255, 255, 0.9);
+	color: #c4956a;
 	font-family: 'Inter', sans-serif;
 	font-size: 12px;
 	font-weight: 600;
@@ -160,20 +162,20 @@
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.navigation.light & {
-		background: rgba(0, 0, 0, 0.04);
-		border-color: rgba(0, 0, 0, 0.1);
-		color: #3d3227;
+		background: rgba(196, 149, 106, 0.08);
+		border-color: rgba(196, 149, 106, 0.2);
+		color: #8b6914;
 	}
 
 	&:hover {
-		background: rgba(255, 255, 255, 0.15);
-		border-color: rgba(255, 255, 255, 0.25);
+		background: rgba(196, 149, 106, 0.2);
+		border-color: rgba(196, 149, 106, 0.35);
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 4px 12px rgba(196, 149, 106, 0.15);
 
 		.navigation.light & {
-			background: rgba(0, 0, 0, 0.08);
-			border-color: rgba(0, 0, 0, 0.15);
+			background: rgba(196, 149, 106, 0.15);
+			border-color: rgba(196, 149, 106, 0.3);
 		}
 	}
 
@@ -199,21 +201,21 @@
 	width: 40px;
 	height: 40px;
 	padding: 0;
-	background: rgba(255, 255, 255, 0.08);
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(196, 149, 106, 0.1);
+	border: 1px solid rgba(196, 149, 106, 0.2);
 	border-radius: 10px;
-	color: rgba(255, 255, 255, 0.9);
+	color: #c4956a;
 	cursor: pointer;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 	.navigation.light & {
-		background: rgba(0, 0, 0, 0.04);
-		border-color: rgba(0, 0, 0, 0.1);
-		color: #3d3227;
+		background: rgba(196, 149, 106, 0.08);
+		border-color: rgba(196, 149, 106, 0.2);
+		color: #8b6914;
 	}
 
 	&:hover {
-		background: rgba(255, 255, 255, 0.15);
+		background: rgba(196, 149, 106, 0.2);
 	}
 }
 
@@ -230,7 +232,7 @@
 	right: 0;
 	bottom: 0;
 	z-index: 90;
-	background: rgba(10, 10, 15, 0.95);
+	background: rgba(15, 13, 10, 0.97);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
 	display: flex;
@@ -238,7 +240,7 @@
 	justify-content: center;
 
 	&.light {
-		background: rgba(255, 255, 255, 0.95);
+		background: rgba(250, 247, 242, 0.97);
 	}
 }
 
@@ -254,7 +256,7 @@
 	font-family: 'Inter', sans-serif;
 	font-size: 28px;
 	font-weight: 600;
-	color: rgba(255, 255, 255, 0.9);
+	color: #f5efe6;
 	text-decoration: none;
 	padding: 16px 32px;
 	border-radius: 16px;
@@ -262,16 +264,18 @@
 	text-align: center;
 
 	.mobileOverlay.light & {
-		color: #1a1a1a;
+		color: #2d2620;
 	}
 
 	&:hover,
 	&:active {
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(196, 149, 106, 0.15);
 		transform: scale(1.05);
+		color: #c4956a;
 
 		.mobileOverlay.light & {
-			background: rgba(0, 0, 0, 0.05);
+			background: rgba(196, 149, 106, 0.12);
+			color: #8b6914;
 		}
 	}
 }

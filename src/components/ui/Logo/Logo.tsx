@@ -1,12 +1,19 @@
+import { useEffect, useState } from 'react';
 import { useTheme } from '../../../contexts/ThemeContext';
 import styles from './Logo.module.scss';
 
 const Logo = () => {
 	const { theme } = useTheme();
+	const [isSpinning, setIsSpinning] = useState(false);
 
-	// Терракотовая палитра
 	const primaryColor = theme === 'light' ? '#B85C38' : '#D4856A';
 	const secondaryColor = theme === 'light' ? '#2D2D2D' : '#F5F5F5';
+
+	// Spin on page load
+	useEffect(() => {
+		const timer = setTimeout(() => setIsSpinning(true), 300);
+		return () => clearTimeout(timer);
+	}, []);
 
 	return (
 		<svg
@@ -15,16 +22,13 @@ const Logo = () => {
 			xmlns='http://www.w3.org/2000/svg'
 			className={styles.logo}>
 
-			{/* Геометрический ромб */}
-			<g className={styles.diamond}>
+			{/* Вариант 2: Только контур шестиугольника */}
+			<g className={`${styles.diamond} ${isSpinning ? styles.spinning : ''}`}>
 				<path
-					d='M30 4 L56 36 L30 68 L4 36 Z'
-					fill={primaryColor}
-				/>
-				{/* Внутренний вырез */}
-				<path
-					d='M30 18 L44 36 L30 54 L16 36 Z'
-					fill={theme === 'light' ? '#FFF5F0' : '#1a1a1a'}
+					d='M30 12 L51 24 L51 48 L30 60 L9 48 L9 24 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='4'
 				/>
 			</g>
 

@@ -4,7 +4,7 @@ export const en = {
 		services: 'Services',
 		portfolio: 'Portfolio',
 		team: 'Team',
-		blog: 'Blog',
+		tech: 'Tech',
 		contact: 'Contact',
 	},
 	hero: {
@@ -66,6 +66,18 @@ export const en = {
 				description:
 					'Speed optimization, SEO improvements, and technical audits to maximize your digital presence.',
 			},
+		},
+	},
+	tech: {
+		label: 'Tech Stack',
+		title: 'Technologies we use',
+		subtitle:
+			'Modern tools and frameworks that power our solutions.',
+		categories: {
+			frontend: 'Frontend',
+			backend: 'Backend',
+			database: 'Database',
+			tools: 'DevOps & Tools',
 		},
 	},
 	portfolio: {

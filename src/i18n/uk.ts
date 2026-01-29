@@ -6,7 +6,7 @@ export const uk: Translations = {
 		services: 'Послуги',
 		portfolio: 'Портфоліо',
 		team: 'Команда',
-		blog: 'Блог',
+		tech: 'Технології',
 		contact: 'Контакти',
 	},
 	hero: {
@@ -68,6 +68,18 @@ export const uk: Translations = {
 				description:
 					'Оптимізація швидкості, покращення SEO та технічний аудит для максимізації цифрової присутності.',
 			},
+		},
+	},
+	tech: {
+		label: 'Технології',
+		title: 'Технології, які ми використовуємо',
+		subtitle:
+			'Сучасні інструменти та фреймворки для ваших рішень.',
+		categories: {
+			frontend: 'Фронтенд',
+			backend: 'Бекенд',
+			database: 'Бази даних',
+			tools: 'DevOps & Інструменти',
 		},
 	},
 	portfolio: {

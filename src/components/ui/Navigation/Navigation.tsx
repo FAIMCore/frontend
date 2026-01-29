@@ -43,7 +43,7 @@ const Navigation = () => {
 		{ label: t.nav.services, href: '#services' },
 		{ label: t.nav.portfolio, href: '#portfolio' },
 		{ label: t.nav.team, href: '#team' },
-		{ label: t.nav.blog, href: '#blog' },
+		{ label: t.nav.tech, href: '#tech' },
 		{ label: t.nav.contact, href: '#contact' },
 	];
 

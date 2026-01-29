@@ -4,13 +4,14 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Team.module.scss';
 
-const memberKeys = ['igor', 'maria', 'oleksandr', 'anna'] as const;
+const memberKeys = ['igor', 'anna', 'dog1', 'dog2'] as const;
 const memberImages = [
-	'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=400&fit=crop&crop=face',
+	'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&h=400&fit=crop&crop=face',
 ];
+const isDog = (key: string) => key === 'dog1' || key === 'dog2';
 
 const Team = () => {
 	const { theme } = useTheme();
@@ -18,11 +19,12 @@ const Team = () => {
 
 	const team = memberKeys.map((key, index) => ({
 		id: index + 1,
+		key,
 		name: t.team.members[key].name,
 		role: t.team.members[key].role,
 		bio: t.team.members[key].bio,
 		image: memberImages[index],
-		social: { linkedin: '#', github: '#', twitter: '#' },
+		social: isDog(key) ? null : { linkedin: '#', github: '#', twitter: '#' },
 	}));
 
 	return (
@@ -61,17 +63,19 @@ const Team = () => {
 								<h3 className={styles.name}>{member.name}</h3>
 								<span className={styles.role}>{member.role}</span>
 								<p className={styles.bio}>{member.bio}</p>
-								<div className={styles.social}>
-									<a href={member.social.linkedin} className={styles.socialLink}>
-										<LinkedInLogoIcon />
-									</a>
-									<a href={member.social.github} className={styles.socialLink}>
-										<GitHubLogoIcon />
-									</a>
-									<a href={member.social.twitter} className={styles.socialLink}>
-										<TwitterLogoIcon />
-									</a>
-								</div>
+								{member.social && (
+									<div className={styles.social}>
+										<a href={member.social.linkedin} className={styles.socialLink}>
+											<LinkedInLogoIcon />
+										</a>
+										<a href={member.social.github} className={styles.socialLink}>
+											<GitHubLogoIcon />
+										</a>
+										<a href={member.social.twitter} className={styles.socialLink}>
+											<TwitterLogoIcon />
+										</a>
+									</div>
+								)}
 							</div>
 						</motion.div>
 					))}

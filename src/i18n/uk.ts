@@ -183,6 +183,11 @@ export const uk: Translations = {
 				value: 'hello@faimcore.com',
 				description: 'Відповідаємо протягом 24 годин',
 			},
+			phone: {
+				title: 'Зателефонуйте',
+				value: '+38 098 550 77 99',
+				description: 'Пн-Пт, 9:00-18:00',
+			},
 			chat: {
 				title: 'Живий чат',
 				value: 'Почати розмову',

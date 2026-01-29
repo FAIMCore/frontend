@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { EnvelopeClosedIcon, ChatBubbleIcon, GlobeIcon } from '@radix-ui/react-icons';
+import { EnvelopeClosedIcon, MobileIcon, ChatBubbleIcon, GlobeIcon } from '@radix-ui/react-icons';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Contact.module.scss';
 
-const contactIcons = [EnvelopeClosedIcon, ChatBubbleIcon, GlobeIcon];
-const contactKeys = ['email', 'chat', 'location'] as const;
+const contactIcons = [EnvelopeClosedIcon, MobileIcon, ChatBubbleIcon, GlobeIcon];
+const contactKeys = ['email', 'phone', 'chat', 'location'] as const;
 
 const Contact = () => {
 	const { theme } = useTheme();

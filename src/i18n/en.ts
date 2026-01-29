@@ -181,6 +181,11 @@ export const en = {
 				value: 'hello@faimcore.com',
 				description: 'We reply within 24 hours',
 			},
+			phone: {
+				title: 'Call Us',
+				value: '+38 098 550 77 99',
+				description: 'Mon-Fri, 9am-6pm',
+			},
 			chat: {
 				title: 'Live Chat',
 				value: 'Start a conversation',

@@ -36,6 +36,13 @@ const AnimatedGrid = () => {
 	const { theme } = useTheme();
 	const { t } = useLanguage();
 
+	const scrollToSection = (sectionId: string) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	useEffect(() => {
 		const width = window.innerWidth;
 		const height = window.innerHeight;
@@ -117,11 +124,17 @@ const AnimatedGrid = () => {
 					className={styles.ctaContainer}
 					variants={fadeInUp}
 					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
-					<button className={styles.ctaButton}>
+					<button
+						className={styles.ctaButton}
+						onClick={() => scrollToSection('contact')}>
 						<span>{t.hero.cta}</span>
 						<div className={styles.ctaGlow} />
 					</button>
-					<button className={styles.ctaSecondary}>{t.hero.ctaSecondary}</button>
+					<button
+						className={styles.ctaSecondary}
+						onClick={() => scrollToSection('portfolio')}>
+						{t.hero.ctaSecondary}
+					</button>
 				</motion.div>
 			</motion.div>
 

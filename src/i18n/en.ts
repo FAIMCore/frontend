@@ -8,19 +8,19 @@ export const en = {
 		contact: 'Contact',
 	},
 	hero: {
-		tagline: 'Web Development Studio',
-		title: 'We deliver digital',
-		titleLine2: 'solutions that work',
-		subtitle: 'Professional web development with a focus on quality and results',
+		tagline: 'Foundation • Aim • Core',
+		title: 'We build digital',
+		titleLine2: 'foundations that last',
+		subtitle: 'Strong foundation. Clear aim. Solid core.',
 		cta: 'Get Started',
 		ctaSecondary: 'View Portfolio',
 		scroll: 'Scroll to explore',
 	},
 	about: {
 		label: 'About Us',
-		title: 'Focused on delivering real results',
+		title: 'Foundation. Aim. Core.',
 		description1:
-			'FAIMCore is a web development studio that prioritizes quality, clear communication, and measurable outcomes. We approach every project with professionalism and a commitment to understanding your business goals.',
+			'FAIMCore stands for what we believe in: Foundation — we build solid groundwork for your business. Aim — your success is our goal. Core — we become the heart of your digital operations.',
 		description2:
 			'Our process is straightforward: we listen, we plan, we execute. No unnecessary complexity, no missed deadlines. Just reliable development that delivers what you need, when you need it.',
 		stats: {
@@ -194,7 +194,7 @@ export const en = {
 	},
 	footer: {
 		description:
-			'Professional web development studio focused on delivering quality digital solutions.',
+			'Foundation • Aim • Core — Building digital foundations for your business success.',
 		company: 'Company',
 		services: 'Services',
 		resources: 'Resources',

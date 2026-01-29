@@ -1,36 +1,262 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>FAIMCore - Web Development Studio</title>
-    <meta name="title" content="FAIMCore - Web Development Studio" />
-    <meta name="description" content="FAIMCore is a professional web development studio focused on delivering quality digital solutions. We build web applications with modern technologies and a commitment to results." />
-    <meta name="keywords" content="web development, software development, digital solutions, web applications, React, TypeScript, FAIMCore" />
+    <title>FAIMCore - Студія веб-розробки в Києві | Створення сайтів та веб-додатків</title>
+    <meta name="title" content="FAIMCore - Студія веб-розробки в Києві | Створення сайтів та веб-додатків" />
+    <meta name="description" content="FAIMCore — професійна студія веб-розробки в Україні. Створюємо сучасні веб-сайти, веб-додатки та мобільні застосунки на React, Next.js, TypeScript. Індивідуальний підхід, якісний код, вчасна доставка." />
+    <meta name="keywords" content="веб-розробка Київ, створення сайтів Україна, розробка веб-додатків, React розробка, фронтенд розробка, UI/UX дизайн, мобільні додатки, MVP розробка, веб-студія Київ, програмування на замовлення, FAIMCore, web development Ukraine" />
     <meta name="author" content="FAIMCore" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Language and Region -->
+    <meta name="language" content="Ukrainian" />
+    <meta name="geo.region" content="UA" />
+    <meta name="geo.placename" content="Kyiv" />
+    <meta name="geo.position" content="50.4501;30.5234" />
+    <meta name="ICBM" content="50.4501, 30.5234" />
+    <meta name="content-language" content="uk-UA" />
+
+    <!-- Hreflang for language versions -->
+    <link rel="alternate" hreflang="uk" href="https://faimcore.com/" />
+    <link rel="alternate" hreflang="en" href="https://faimcore.com/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://faimcore.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://faimcore.com/" />
-    <meta property="og:title" content="FAIMCore - Web Development Studio" />
-    <meta property="og:description" content="FAIMCore is a professional web development studio focused on delivering quality digital solutions. We build web applications with modern technologies and a commitment to results." />
+    <meta property="og:title" content="FAIMCore - Студія веб-розробки в Києві" />
+    <meta property="og:description" content="Професійна веб-розробка в Україні. Створюємо сучасні веб-сайти та додатки на React, Next.js, TypeScript. Якісний код, вчасна доставка." />
     <meta property="og:image" content="https://faimcore.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FAIMCore - Студія веб-розробки" />
     <meta property="og:site_name" content="FAIMCore" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://faimcore.com/" />
-    <meta name="twitter:title" content="FAIMCore - Web Development Studio" />
-    <meta name="twitter:description" content="FAIMCore is a professional web development studio focused on delivering quality digital solutions. We build web applications with modern technologies and a commitment to results." />
+    <meta name="twitter:title" content="FAIMCore - Студія веб-розробки в Києві" />
+    <meta name="twitter:description" content="Професійна веб-розробка в Україні. React, Next.js, TypeScript. Якісний код, вчасна доставка." />
     <meta name="twitter:image" content="https://faimcore.com/twitter-image.jpg" />
+    <meta name="twitter:image:alt" content="FAIMCore - Студія веб-розробки" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://faimcore.com/" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#B85C38" />
+    <meta name="msapplication-TileColor" content="#B85C38" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FAIMCore",
+      "alternateName": "ФАІМКор",
+      "url": "https://faimcore.com",
+      "logo": "https://faimcore.com/logo.svg",
+      "description": "Професійна студія веб-розробки в Україні. Створюємо сучасні веб-сайти та додатки.",
+      "foundingDate": "2020",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Igor Fedianin",
+          "alternateName": "Ігор Федянін"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kyiv",
+        "addressRegion": "Kyiv",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.4501,
+        "longitude": 30.5234
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+380985507799",
+        "contactType": "customer service",
+        "email": "hello@faimcore.com",
+        "availableLanguage": ["Ukrainian", "English"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/faimcore",
+        "https://github.com/faimcore"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ukraine"
+      },
+      "knowsLanguage": ["uk", "en"]
+    }
+    </script>
+
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "FAIMCore",
+      "image": "https://faimcore.com/og-image.jpg",
+      "url": "https://faimcore.com",
+      "telephone": "+380985507799",
+      "email": "hello@faimcore.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Київ",
+        "addressRegion": "Київська область",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.4501,
+        "longitude": 30.5234
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "serviceType": [
+        "Веб-розробка",
+        "Створення сайтів",
+        "Розробка веб-додатків",
+        "UI/UX дизайн",
+        "Мобільна розробка",
+        "MVP розробка"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FAIMCore",
+      "alternateName": "ФАІМКор - Студія веб-розробки",
+      "url": "https://faimcore.com",
+      "inLanguage": ["uk-UA", "en-US"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "FAIMCore"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Веб-розробка",
+      "provider": {
+        "@type": "Organization",
+        "name": "FAIMCore",
+        "url": "https://faimcore.com"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ukraine"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Послуги веб-розробки",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Веб-розробка",
+              "description": "Індивідуальні веб-додатки на React, Next.js, TypeScript"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UI/UX Дизайн",
+              "description": "Дизайн інтерфейсів з фокусом на користувацький досвід"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Мобільні додатки",
+              "description": "Кросплатформні мобільні додатки на React Native"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MVP Розробка",
+              "description": "Швидке прототипування та розробка MVP"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Structured Data - FAQ for AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Які послуги надає FAIMCore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FAIMCore надає послуги веб-розробки, UI/UX дизайну, розробки мобільних додатків, MVP розробки, API інтеграції та оптимізації продуктивності веб-сайтів."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Які технології використовує FAIMCore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ми використовуємо сучасні технології: React, Next.js, TypeScript, Node.js, React Native для мобільних додатків, та хмарні сервіси для надійної інфраструктури."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Де знаходиться FAIMCore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FAIMCore базується в Києві, Україна, але працює з клієнтами по всьому світу віддалено."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Як зв'язатися з FAIMCore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Зв'яжіться з нами через email hello@faimcore.com або телефон +38 098 550 77 99. Ми відповідаємо протягом 24 годин."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

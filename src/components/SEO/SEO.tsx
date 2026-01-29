@@ -5,17 +5,17 @@ const seoContent = {
 	uk: {
 		title: 'FAIMCore - Студія веб-розробки в Києві | Створення сайтів та веб-додатків',
 		description:
-			'FAIMCore — професійна студія веб-розробки в Україні. Створюємо сучасні веб-сайти, веб-додатки та мобільні застосунки на React, Next.js, TypeScript. Індивідуальний підхід, якісний код, вчасна доставка.',
+			'FAIMCore — професійна студія веб-розробки в Україні. Створюємо сучасні веб-сайти та веб-додатки на React, Angular (фронтенд) та Python, Django, FastAPI (бекенд). Індивідуальний підхід, якісний код, вчасна доставка.',
 		keywords:
-			'веб-розробка Київ, створення сайтів Україна, розробка веб-додатків, React розробка, фронтенд розробка, UI/UX дизайн, мобільні додатки, MVP розробка, веб-студія Київ, FAIMCore',
+			'веб-розробка Київ, створення сайтів Україна, розробка веб-додатків, React розробка, Angular розробка, Python розробка, Django, FastAPI, фронтенд розробка, бекенд розробка, UI/UX дизайн, MVP розробка, веб-студія Київ, FAIMCore',
 		locale: 'uk_UA',
 	},
 	en: {
 		title: 'FAIMCore - Web Development Studio in Kyiv | Websites & Web Apps',
 		description:
-			'FAIMCore is a professional web development studio in Ukraine. We build modern websites, web applications and mobile apps using React, Next.js, TypeScript. Quality code, on-time delivery.',
+			'FAIMCore is a professional web development studio in Ukraine. We build modern websites and web applications using React, Angular (frontend) and Python, Django, FastAPI (backend). Quality code, on-time delivery.',
 		keywords:
-			'web development Kyiv, website creation Ukraine, web app development, React development, frontend development, UI/UX design, mobile apps, MVP development, web studio Ukraine, FAIMCore',
+			'web development Kyiv, website creation Ukraine, web app development, React development, Angular development, Python development, Django, FastAPI, frontend development, backend development, UI/UX design, MVP development, web studio Ukraine, FAIMCore',
 		locale: 'en_US',
 	},
 };

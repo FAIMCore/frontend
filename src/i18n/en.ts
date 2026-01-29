@@ -39,7 +39,7 @@ export const en = {
 			webDev: {
 				title: 'Web Development',
 				description:
-					'Custom web applications built with modern technologies like React, Next.js, and TypeScript for optimal performance and scalability.',
+					'Custom web applications with React and Angular on frontend, Python, Django and FastAPI on backend for optimal performance and scalability.',
 			},
 			uiux: {
 				title: 'UI/UX Design',
@@ -122,7 +122,7 @@ export const en = {
 			igor: {
 				name: 'Igor Fedianin',
 				role: 'Founder & Lead Developer',
-				bio: 'Full-stack developer with expertise in React, Node.js, and cloud architecture. Focused on building scalable, maintainable solutions.',
+				bio: 'Full-stack developer with expertise in React, Angular, Python, Django and FastAPI. Focused on building scalable, maintainable solutions.',
 			},
 			anna: {
 				name: 'Anna Fedianina',
@@ -132,7 +132,7 @@ export const en = {
 			alex: {
 				name: 'Alex Kovalenko',
 				role: 'Backend Developer',
-				bio: 'Backend specialist with deep knowledge of databases, APIs, and system architecture. Ensures robust and efficient server-side solutions.',
+				bio: 'Backend specialist with deep knowledge of Python, Django, FastAPI, databases and system architecture. Ensures robust and efficient server-side solutions.',
 			},
 		},
 	},

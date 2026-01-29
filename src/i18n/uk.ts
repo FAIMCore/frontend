@@ -169,41 +169,29 @@ export const uk: Translations = {
 	},
 	contact: {
 		label: 'Контакти',
-		title: 'Почнімо розмову',
+		title: 'Давайте поговоримо',
 		description:
-			'Готові обговорити проєкт? Напишіть нам, і ми надамо чіткий план дій.',
+			'Оберіть зручний спосіб зв\'язку. Відповідаємо швидко та завжди готові обговорити ваш проєкт.',
 		info: {
 			email: {
 				title: 'Email',
 				value: 'hello@faimcore.com',
-				description: 'Відповідь протягом 24 годин',
 			},
 			phone: {
 				title: 'Телефон',
 				value: '+38 098 550 77 99',
-				description: 'Пн-Пт, 9:00-18:00',
-			},
-			chat: {
-				title: 'Чат',
-				value: 'Почати розмову',
-				description: 'Пн-Пт, 9:00-18:00',
 			},
 			location: {
 				title: 'Локація',
 				value: 'Київ, Україна',
-				description: 'Працюємо по всьому світу',
 			},
 		},
-		form: {
-			name: "Ім'я",
-			namePlaceholder: 'Ваше ім\'я',
-			email: 'Email',
-			emailPlaceholder: 'your@email.com',
-			subject: 'Тема',
-			subjectPlaceholder: 'Запит щодо проєкту',
-			message: 'Повідомлення',
-			messagePlaceholder: 'Опишіть ваш проєкт...',
-			submit: 'Надіслати',
+		cta: {
+			telegram: 'Telegram',
+			telegramDesc: 'Популярний в Україні',
+			whatsapp: 'WhatsApp',
+			whatsappDesc: 'Для міжнародних клієнтів',
+			response: 'Зазвичай відповідаємо за 5 хвилин',
 		},
 	},
 	footer: {

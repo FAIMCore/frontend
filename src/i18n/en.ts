@@ -167,41 +167,29 @@ export const en = {
 	},
 	contact: {
 		label: 'Contact',
-		title: 'Start a conversation',
+		title: 'Let\'s talk',
 		description:
-			'Ready to discuss your project? Reach out and we will get back to you with a clear plan of action.',
+			'Choose a convenient way to contact us. We respond quickly and are always ready to discuss your project.',
 		info: {
 			email: {
 				title: 'Email',
 				value: 'hello@faimcore.com',
-				description: 'Response within 24 hours',
 			},
 			phone: {
 				title: 'Phone',
 				value: '+38 098 550 77 99',
-				description: 'Mon-Fri, 9am-6pm',
-			},
-			chat: {
-				title: 'Live Chat',
-				value: 'Start a conversation',
-				description: 'Mon-Fri, 9am-6pm',
 			},
 			location: {
 				title: 'Location',
 				value: 'Kyiv, Ukraine',
-				description: 'Working worldwide',
 			},
 		},
-		form: {
-			name: 'Name',
-			namePlaceholder: 'Your name',
-			email: 'Email',
-			emailPlaceholder: 'your@email.com',
-			subject: 'Subject',
-			subjectPlaceholder: 'Project inquiry',
-			message: 'Message',
-			messagePlaceholder: 'Describe your project...',
-			submit: 'Send Message',
+		cta: {
+			telegram: 'Telegram',
+			telegramDesc: 'Popular in Ukraine',
+			whatsapp: 'WhatsApp',
+			whatsappDesc: 'International clients',
+			response: 'Usually respond within 5 minutes',
 		},
 	},
 	footer: {

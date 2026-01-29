@@ -4,6 +4,24 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Team.module.scss';
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.15,
+		},
+	},
+};
+
+const cardVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.5 },
+	},
+};
+
 const memberKeys = ['igor', 'anna', 'alex'] as const;
 const memberImages = [
 	'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
@@ -41,15 +59,17 @@ const Team = () => {
 					<p className={styles.subtitle}>{t.team.subtitle}</p>
 				</motion.div>
 
-				<div className={styles.grid}>
-					{team.map((member, index) => (
+				<motion.div
+					className={styles.grid}
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: '-50px' }}>
+					{team.map((member) => (
 						<motion.div
 							key={member.id}
 							className={styles.card}
-							initial={{ opacity: 0, y: 40 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: '-50px' }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}>
+							variants={cardVariants}>
 							<div className={styles.imageWrapper}>
 								<img
 									src={member.image}
@@ -77,7 +97,7 @@ const Team = () => {
 							</div>
 						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

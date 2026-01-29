@@ -6,17 +6,22 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './AnimatedGrid.module.scss';
 
-const fadeInUp = {
-	initial: { opacity: 0, y: 30 },
-	animate: { opacity: 1, y: 0 },
+// Slide up + fade animation for hero
+const heroVariants = {
+	hidden: { opacity: 0, y: 30 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] },
+	},
 };
 
-const staggerContainer = {
-	animate: {
-		transition: {
-			staggerChildren: 0.15,
-			delayChildren: 0.3,
-		},
+const navVariants = {
+	hidden: { opacity: 0, y: -20 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
 	},
 };
 
@@ -306,40 +311,28 @@ const AnimatedGrid = () => {
 
 			{/* Navigation menu */}
 			<motion.div
-				initial={{ opacity: 0, y: -20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+				variants={navVariants}
+				initial='hidden'
+				animate='visible'>
 				<Navigation />
 			</motion.div>
 
-			{/* Center text content */}
+			{/* Center text content - slide up animation */}
 			<motion.div
 				className={styles.centerContent}
-				variants={staggerContainer}
-				initial='initial'
-				animate='animate'>
-				<motion.div
-					className={styles.tagline}
-					variants={fadeInUp}
-					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+				variants={heroVariants}
+				initial='hidden'
+				animate='visible'>
+				<div className={styles.tagline}>
 					{t.hero.tagline}
-				</motion.div>
-				<motion.h1
-					className={styles.mainTitle}
-					variants={fadeInUp}
-					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+				</div>
+				<h1 className={styles.mainTitle}>
 					{t.hero.title} <br /> {t.hero.titleLine2}
-				</motion.h1>
-				<motion.p
-					className={styles.subtitle}
-					variants={fadeInUp}
-					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+				</h1>
+				<p className={styles.subtitle}>
 					{t.hero.subtitle}
-				</motion.p>
-				<motion.div
-					className={styles.ctaContainer}
-					variants={fadeInUp}
-					transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+				</p>
+				<div className={styles.ctaContainer}>
 					<button
 						className={styles.ctaButton}
 						onClick={() => scrollToSection('contact')}>
@@ -351,7 +344,7 @@ const AnimatedGrid = () => {
 						onClick={() => scrollToSection('portfolio')}>
 						{t.hero.ctaSecondary}
 					</button>
-				</motion.div>
+				</div>
 			</motion.div>
 
 			{/* Scroll indicator */}
@@ -359,7 +352,7 @@ const AnimatedGrid = () => {
 				className={styles.scrollIndicator}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ delay: 1.5, duration: 0.6 }}>
+				transition={{ delay: 1.2, duration: 0.6 }}>
 				<span>{t.hero.scroll}</span>
 				<motion.div
 					animate={{ y: [0, 8, 0] }}

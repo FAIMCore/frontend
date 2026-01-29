@@ -4,6 +4,24 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Portfolio.module.scss';
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.12,
+		},
+	},
+};
+
+const cardVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.5 },
+	},
+};
+
 const projectKeys = ['fintrack', 'health', 'shop', 'edu', 'logi', 'event'] as const;
 const projectImages = [
 	'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
@@ -51,15 +69,17 @@ const Portfolio = () => {
 					<p className={styles.subtitle}>{t.portfolio.subtitle}</p>
 				</motion.div>
 
-				<div className={styles.grid}>
-					{projects.map((project, index) => (
+				<motion.div
+					className={styles.grid}
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: '-50px' }}>
+					{projects.map((project) => (
 						<motion.div
 							key={project.id}
 							className={styles.card}
-							initial={{ opacity: 0, y: 40 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: '-50px' }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}>
+							variants={cardVariants}>
 							<div className={styles.imageWrapper}>
 								<img
 									src={project.image}
@@ -87,7 +107,7 @@ const Portfolio = () => {
 							</div>
 						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

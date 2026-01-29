@@ -15,48 +15,46 @@ const translations: Record<Language, Translations> = { en, uk };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const detectLanguageFromLocation = async (): Promise<Language> => {
-	try {
-		const response = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) });
-		const data = await response.json();
-		return data.country_code === 'UA' ? 'uk' : 'en';
-	} catch {
-		// Fallback to browser language
-		const browserLang = navigator.language || (navigator as { userLanguage?: string }).userLanguage || 'en';
-		return browserLang.startsWith('uk') ? 'uk' : 'en';
+// Get initial language synchronously (no async detection on first render)
+const getInitialLanguage = (): Language => {
+	if (typeof window !== 'undefined') {
+		const saved = localStorage.getItem('language') as Language;
+		if (saved && (saved === 'en' || saved === 'uk')) {
+			return saved;
+		}
+		// Check browser language synchronously
+		const browserLang = navigator.language || (navigator as { userLanguage?: string }).userLanguage || 'uk';
+		return browserLang.startsWith('uk') ? 'uk' : 'uk'; // Default to Ukrainian
 	}
+	return 'uk'; // Default to Ukrainian
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-	const [language, setLanguageState] = useState<Language>(() => {
-		if (typeof window !== 'undefined') {
-			const saved = localStorage.getItem('language') as Language;
-			if (saved && (saved === 'en' || saved === 'uk')) {
-				return saved;
-			}
-		}
-		return 'en';
-	});
+	const [language, setLanguageState] = useState<Language>(getInitialLanguage);
 
-	const [initialized, setInitialized] = useState(false);
-
+	// Only detect from IP if no saved preference (runs once, doesn't block render)
 	useEffect(() => {
 		const saved = localStorage.getItem('language');
 		if (!saved) {
-			detectLanguageFromLocation().then((detectedLang) => {
-				setLanguageState(detectedLang);
-				localStorage.setItem('language', detectedLang);
-				setInitialized(true);
-			});
-		} else {
-			setInitialized(true);
+			// Async detection - updates language if different, but doesn't block initial render
+			fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) })
+				.then(res => res.json())
+				.then(data => {
+					const detected: Language = data.country_code === 'UA' ? 'uk' : 'en';
+					// Only update if different from current (Ukrainian default)
+					if (detected !== 'uk') {
+						setLanguageState(detected);
+						localStorage.setItem('language', detected);
+					} else {
+						localStorage.setItem('language', 'uk');
+					}
+				})
+				.catch(() => {
+					// On error, keep Ukrainian and save it
+					localStorage.setItem('language', 'uk');
+				});
 		}
 	}, []);
-
-	// Don't render until language is determined (prevents flash)
-	if (!initialized && !localStorage.getItem('language')) {
-		return null;
-	}
 
 	const setLanguage = useCallback((lang: Language) => {
 		setLanguageState(lang);

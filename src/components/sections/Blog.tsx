@@ -4,6 +4,24 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Blog.module.scss';
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.15,
+		},
+	},
+};
+
+const cardVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.5 },
+	},
+};
+
 const postKeys = ['react', 'design', 'performance'] as const;
 const postImages = [
 	'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop',
@@ -43,15 +61,17 @@ const Blog = () => {
 					<p className={styles.subtitle}>{t.blog.subtitle}</p>
 				</motion.div>
 
-				<div className={styles.grid}>
-					{posts.map((post, index) => (
+				<motion.div
+					className={styles.grid}
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: '-50px' }}>
+					{posts.map((post) => (
 						<motion.article
 							key={post.id}
 							className={styles.card}
-							initial={{ opacity: 0, y: 40 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: '-50px' }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}>
+							variants={cardVariants}>
 							<div className={styles.imageWrapper}>
 								<img
 									src={post.image}
@@ -80,14 +100,14 @@ const Blog = () => {
 							</div>
 						</motion.article>
 					))}
-				</div>
+				</motion.div>
 
 				<motion.div
 					className={styles.viewAll}
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.5, delay: 0.3 }}>
+					transition={{ duration: 0.5 }}>
 					<button className={styles.viewAllButton}>
 						{t.blog.viewAll}
 						<ArrowRightIcon />

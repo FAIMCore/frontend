@@ -11,6 +11,24 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Services.module.scss';
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
+};
+
+const cardVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.5 },
+	},
+};
+
 const serviceIcons = [CodeIcon, DesktopIcon, MobileIcon, RocketIcon, GearIcon, LightningBoltIcon];
 const serviceKeys = ['webDev', 'uiux', 'mobile', 'mvp', 'api', 'performance'] as const;
 
@@ -40,15 +58,17 @@ const Services = () => {
 					<p className={styles.subtitle}>{t.services.subtitle}</p>
 				</motion.div>
 
-				<div className={styles.grid}>
+				<motion.div
+					className={styles.grid}
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: '-50px' }}>
 					{services.map((service, index) => (
 						<motion.div
 							key={serviceKeys[index]}
 							className={styles.card}
-							initial={{ opacity: 0, y: 40 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: '-50px' }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}>
+							variants={cardVariants}>
 							<div className={styles.iconWrapper}>
 								<service.icon className={styles.icon} />
 							</div>
@@ -56,7 +76,7 @@ const Services = () => {
 							<p className={styles.cardDescription}>{service.description}</p>
 						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

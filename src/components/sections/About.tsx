@@ -3,6 +3,24 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './About.module.scss';
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.15,
+		},
+	},
+};
+
+const itemVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.6 },
+	},
+};
+
 const About = () => {
 	const { theme } = useTheme();
 	const { t } = useLanguage();
@@ -33,18 +51,15 @@ const About = () => {
 
 				<motion.div
 					className={styles.stats}
-					initial={{ opacity: 0, y: 40 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: '-100px' }}
-					transition={{ duration: 0.6, delay: 0.2 }}>
-					{stats.map((stat, index) => (
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: '-50px' }}>
+					{stats.map((stat) => (
 						<motion.div
 							key={stat.label}
 							className={styles.statItem}
-							initial={{ opacity: 0, scale: 0.8 }}
-							whileInView={{ opacity: 1, scale: 1 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.4, delay: 0.1 * index }}>
+							variants={itemVariants}>
 							<span className={styles.statNumber}>{stat.number}</span>
 							<span className={styles.statLabel}>{stat.label}</span>
 						</motion.div>

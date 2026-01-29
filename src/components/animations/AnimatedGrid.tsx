@@ -71,7 +71,9 @@ const AnimatedGrid = () => {
 
 			{/* Center text content */}
 			<div className={styles.centerContent}>
-				<div className={styles.mainTitle}>WEB SOFTWARE COMPANY</div>
+				<div className={styles.mainTitle}>
+					Building the foundation <br /> of your core business
+				</div>
 				<div className={styles.subtitle}>Your Core, Our Aim</div>
 			</div>
 

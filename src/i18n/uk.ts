@@ -13,7 +13,7 @@ export const uk: Translations = {
 		tagline: 'Основа • Мета • Результат',
 		title: 'Будуємо цифрові',
 		titleLine2: 'рішення, що надихають',
-		subtitle: 'Будуємо. Цілимо. Досягаємо.',
+		subtitle: 'Будуємо. Прагнемо. Досягаємо.',
 		cta: 'Почати',
 		ctaSecondary: 'Портфоліо',
 		scroll: 'Прокрутіть вниз',

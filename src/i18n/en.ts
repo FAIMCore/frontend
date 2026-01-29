@@ -8,21 +8,21 @@ export const en = {
 		contact: 'Contact',
 	},
 	hero: {
-		tagline: 'Web Development Studio',
-		title: 'Building the foundation',
-		titleLine2: 'of your core business',
-		subtitle: 'Your Core, Our Aim',
-		cta: 'Start Your Project',
-		ctaSecondary: 'View Our Work',
+		tagline: 'Family Web Studio',
+		title: 'We build websites',
+		titleLine2: 'with heart and soul',
+		subtitle: 'Where your project becomes part of our family',
+		cta: "Let's Talk",
+		ctaSecondary: 'See Our Work',
 		scroll: 'Scroll to explore',
 	},
 	about: {
 		label: 'About Us',
-		title: 'We craft digital experiences that drive business growth',
+		title: 'A family studio where your project feels like home',
 		description1:
-			'FAIMCore is a web development studio founded with a mission to help businesses establish a powerful digital presence. We combine creative design with cutting-edge technology to build web applications that not only look stunning but also perform exceptionally.',
+			'FAIMCore is a cozy family web development studio. We believe that the best projects are born from trust and warm relationships. No corporate bureaucracy — just honest conversations over a cup of coffee (virtual ones count too!).',
 		description2:
-			"Our team of passionate developers and designers work closely with clients to understand their unique needs and deliver tailored solutions that exceed expectations. From startups to enterprises, we've helped businesses across industries achieve their digital goals.",
+			"We treat every client like a good neighbor: we listen carefully, advise sincerely, and always deliver on our promises. Our furry team members make sure we never miss a deadline — they remind us about walks, which means it's time to wrap up the work!",
 		stats: {
 			projects: 'Projects Delivered',
 			clients: 'Happy Clients',
@@ -114,30 +114,30 @@ export const en = {
 		},
 	},
 	team: {
-		label: 'Our Team',
-		title: 'Meet the experts',
+		label: 'Our Family',
+		title: 'Meet our team',
 		subtitle:
-			'A talented team of developers and designers committed to delivering exceptional digital solutions.',
+			'We are a small but close-knit family. Each of us brings something special to every project — from code to creative ideas to moral support.',
 		members: {
 			igor: {
 				name: 'Igor Fedianin',
 				role: 'Founder & Lead Developer',
-				bio: 'Full-stack developer with 5+ years of experience building scalable web applications.',
-			},
-			maria: {
-				name: 'Maria Kovalenko',
-				role: 'UI/UX Designer',
-				bio: 'Creative designer passionate about crafting intuitive and beautiful user experiences.',
-			},
-			oleksandr: {
-				name: 'Oleksandr Petrenko',
-				role: 'Backend Developer',
-				bio: 'Expert in building robust APIs and database architectures for high-traffic applications.',
+				bio: 'Husband, dog dad, and code enthusiast. Turns coffee into websites and ideas into reality. Available 24/7 (the dogs make sure of it).',
 			},
 			anna: {
-				name: 'Anna Shevchenko',
-				role: 'Frontend Developer',
-				bio: 'React specialist focused on creating performant and accessible web interfaces.',
+				name: 'Anna Fedianina',
+				role: 'Creative Director & Wife',
+				bio: 'The heart and soul of the studio. Keeps everything beautiful and everyone fed. Her superpower: turning "meh" into "wow".',
+			},
+			dog1: {
+				name: 'Buddy',
+				role: 'Chief Happiness Officer',
+				bio: 'Responsible for team morale and mandatory play breaks. Specializes in greeting clients with enthusiasm (and sometimes too much drool).',
+			},
+			dog2: {
+				name: 'Luna',
+				role: 'Quality Assurance Manager',
+				bio: 'Ensures every project gets proper attention by sitting on the keyboard at critical moments. Expert in stress-testing deadlines.',
 			},
 		},
 	},
@@ -171,10 +171,10 @@ export const en = {
 		minRead: 'min read',
 	},
 	contact: {
-		label: 'Contact Us',
-		title: "Let's build something amazing together",
+		label: 'Get in Touch',
+		title: "Let's have a coffee and chat about your project",
 		description:
-			"Ready to transform your digital presence? Get in touch with us today and let's discuss how we can help bring your vision to life.",
+			"No pressure, no complicated forms. Just reach out like you would to a friend. We love hearing new ideas and are always happy to give honest advice — even if you're just brainstorming!",
 		info: {
 			email: {
 				title: 'Email Us',
@@ -211,7 +211,7 @@ export const en = {
 	},
 	footer: {
 		description:
-			'Building exceptional digital experiences that transform businesses and delight users.',
+			'A cozy family studio crafting websites with love, care, and the occasional paw print on the keyboard.',
 		company: 'Company',
 		services: 'Services',
 		resources: 'Resources',

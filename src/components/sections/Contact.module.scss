@@ -61,9 +61,15 @@
 	}
 }
 
-.messengers {
+.twoColumns {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
 	gap: 12px;
 }
 
@@ -308,12 +314,18 @@
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
-	margin-top: 32px;
+	padding: 20px;
+	flex: 1;
+	background: rgba(245, 239, 230, 0.03);
+	border: 1px solid rgba(245, 239, 230, 0.08);
+	border-radius: 14px;
 	font-family: 'Inter', sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	color: rgba(245, 239, 230, 0.5);
 
 	.light & {
+		background: rgba(255, 255, 255, 0.7);
+		border-color: rgba(74, 60, 48, 0.08);
 		color: rgba(74, 60, 48, 0.5);
 	}
 }
@@ -358,41 +370,25 @@
 		font-size: 16px;
 	}
 
-	.messengers {
+	.twoColumns {
 		grid-template-columns: 1fr;
 		gap: 12px;
 	}
 
-	.telegramButton,
-	.whatsappButton {
-		padding: 20px 24px;
-		gap: 14px;
-	}
-
-	.messengerIcon {
-		width: 40px;
-		height: 40px;
-
-		svg {
-			width: 22px;
-			height: 22px;
-		}
-	}
-
-	.messengerTitle {
-		font-size: 16px;
-	}
-
-	.messengerSubtitle {
-		font-size: 12px;
-	}
-
-	.secondaryOptions {
-		grid-template-columns: 1fr;
+	.column {
 		gap: 10px;
 	}
 
+	.telegramButton,
+	.whatsappButton {
+		padding: 18px;
+	}
+
 	.optionCard {
+		padding: 18px;
+	}
+
+	.badge {
 		padding: 18px;
 	}
 }
@@ -468,7 +464,7 @@
 	}
 
 	.badge {
-		margin-top: 28px;
-		font-size: 13px;
+		padding: 16px;
+		font-size: 12px;
 	}
 }

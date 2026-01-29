@@ -52,83 +52,68 @@ const Contact = () => {
 					<p className={styles.subtitle}>{t.contact.description}</p>
 				</motion.div>
 
-				{/* Contact info */}
+				{/* Two column layout */}
 				<motion.div
-					className={styles.secondaryOptions}
+					className={styles.twoColumns}
 					initial={{ opacity: 0, y: 40 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: '-50px' }}
 					transition={{ duration: 0.5, delay: 0.1 }}>
 
-					<button className={styles.optionCard} onClick={handleEmailClick}>
-						<div className={styles.optionIcon}>
-							<EnvelopeClosedIcon />
-						</div>
-						<div className={styles.optionContent}>
-							<span className={styles.optionLabel}>{t.contact.info.email.title}</span>
-							<span className={styles.optionValue}>{t.contact.info.email.value}</span>
-						</div>
-					</button>
+					{/* Left column - Contact info */}
+					<div className={styles.column}>
+						<button className={styles.optionCard} onClick={handleEmailClick}>
+							<div className={styles.optionIcon}>
+								<EnvelopeClosedIcon />
+							</div>
+							<div className={styles.optionContent}>
+								<span className={styles.optionLabel}>{t.contact.info.email.title}</span>
+								<span className={styles.optionValue}>{t.contact.info.email.value}</span>
+							</div>
+						</button>
 
-					<button className={styles.optionCard} onClick={handlePhoneClick}>
-						<div className={styles.optionIcon}>
-							<MobileIcon />
-						</div>
-						<div className={styles.optionContent}>
-							<span className={styles.optionLabel}>{t.contact.info.phone.title}</span>
-							<span className={styles.optionValue}>{t.contact.info.phone.value}</span>
-						</div>
-					</button>
+						<button className={styles.optionCard} onClick={handlePhoneClick}>
+							<div className={styles.optionIcon}>
+								<MobileIcon />
+							</div>
+							<div className={styles.optionContent}>
+								<span className={styles.optionLabel}>{t.contact.info.phone.title}</span>
+								<span className={styles.optionValue}>{t.contact.info.phone.value}</span>
+							</div>
+						</button>
 
-					<div className={styles.optionCard}>
-						<div className={styles.optionIcon}>
-							<GlobeIcon />
-						</div>
-						<div className={styles.optionContent}>
-							<span className={styles.optionLabel}>{t.contact.info.location.title}</span>
-							<span className={styles.optionValue}>{t.contact.info.location.value}</span>
+						<div className={styles.optionCard}>
+							<div className={styles.optionIcon}>
+								<GlobeIcon />
+							</div>
+							<div className={styles.optionContent}>
+								<span className={styles.optionLabel}>{t.contact.info.location.title}</span>
+								<span className={styles.optionValue}>{t.contact.info.location.value}</span>
+							</div>
 						</div>
 					</div>
-				</motion.div>
 
-				{/* Messengers */}
-				<motion.div
-					className={styles.messengers}
-					initial={{ opacity: 0, y: 40 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: '-50px' }}
-					transition={{ duration: 0.5, delay: 0.2 }}>
-
-					<button className={styles.telegramButton} onClick={handleTelegramClick}>
-						<div className={styles.messengerIcon}>
-							<TelegramIcon />
-						</div>
-						<div className={styles.messengerText}>
-							<span className={styles.messengerSubtitle}>{t.contact.cta.telegramDesc}</span>
+					{/* Right column - Messengers */}
+					<div className={styles.column}>
+						<button className={styles.telegramButton} onClick={handleTelegramClick}>
+							<div className={styles.messengerIcon}>
+								<TelegramIcon />
+							</div>
 							<span className={styles.messengerTitle}>{t.contact.cta.telegram}</span>
-						</div>
-					</button>
+						</button>
 
-					<button className={styles.whatsappButton} onClick={handleWhatsAppClick}>
-						<div className={styles.messengerIcon}>
-							<WhatsAppIcon />
-						</div>
-						<div className={styles.messengerText}>
-							<span className={styles.messengerSubtitle}>{t.contact.cta.whatsappDesc}</span>
+						<button className={styles.whatsappButton} onClick={handleWhatsAppClick}>
+							<div className={styles.messengerIcon}>
+								<WhatsAppIcon />
+							</div>
 							<span className={styles.messengerTitle}>{t.contact.cta.whatsapp}</span>
-						</div>
-					</button>
-				</motion.div>
+						</button>
 
-				{/* Response time badge */}
-				<motion.div
-					className={styles.badge}
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.5, delay: 0.4 }}>
-					<span className={styles.badgeDot} />
-					<span>{t.contact.cta.response}</span>
+						<div className={styles.badge}>
+							<span className={styles.badgeDot} />
+							<span>{t.contact.cta.response}</span>
+						</div>
+					</div>
 				</motion.div>
 			</div>
 		</section>

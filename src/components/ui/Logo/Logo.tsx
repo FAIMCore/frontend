@@ -35,89 +35,12 @@ const Logo = () => {
 
 			{/* Фрактальный шестиугольник */}
 			<g className={`${styles.diamond} ${isSpinning ? styles.spinning : ''}`}>
-				{/* 1 - внешний */}
+				{/* 14 - внутренний (рисуется первым, будет снизу) */}
 				<path
-					d='M30 6 L54 20 L54 48 L30 62 L6 48 L6 20 Z'
+					d='M32 30 L34 34 L32 38 L28 38 L26 34 L28 30 Z'
 					fill='none'
-					stroke={primaryColor}
-					strokeWidth='2.5'
-				/>
-				{/* 2 */}
-				<path
-					d='M42 13 L54 34 L42 55 L18 55 L6 34 L18 13 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='1.5'
-				/>
-				{/* 3 */}
-				<path
-					d='M30 13 L48 24 L48 44 L30 55 L12 44 L12 24 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.8'
-				/>
-				{/* 4 */}
-				<path
-					d='M39 18 L48 34 L39 50 L21 50 L12 34 L21 18 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.5'
-				/>
-				{/* 5 */}
-				<path
-					d='M30 18 L44 26 L44 42 L30 50 L16 42 L16 26 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.3'
-				/>
-				{/* 6 */}
-				<path
-					d='M37 22 L44 34 L37 46 L23 46 L16 34 L23 22 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.2'
-				/>
-				{/* 7 */}
-				<path
-					d='M30 22 L40 28 L40 40 L30 46 L20 40 L20 28 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.15'
-				/>
-				{/* 8 */}
-				<path
-					d='M35 25 L40 34 L35 43 L25 43 L20 34 L25 25 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.1'
-				/>
-				{/* 9 */}
-				<path
-					d='M30 25 L38 30 L38 38 L30 43 L22 38 L22 30 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.08'
-				/>
-				{/* 10 */}
-				<path
-					d='M34 27 L38 34 L34 41 L26 41 L22 34 L26 27 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.06'
-				/>
-				{/* 11 */}
-				<path
-					d='M30 27 L36 31 L36 37 L30 41 L24 37 L24 31 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.05'
-				/>
-				{/* 12 */}
-				<path
-					d='M33 29 L36 34 L33 39 L27 39 L24 34 L27 29 Z'
-					fill='none'
-					stroke={primaryColor}
-					strokeWidth='0.04'
+					stroke={secondaryColor}
+					strokeWidth='0.02'
 				/>
 				{/* 13 */}
 				<path
@@ -126,12 +49,89 @@ const Logo = () => {
 					stroke={primaryColor}
 					strokeWidth='0.03'
 				/>
-				{/* 14 - внутренний */}
+				{/* 12 */}
 				<path
-					d='M32 30 L34 34 L32 38 L28 38 L26 34 L28 30 Z'
+					d='M33 29 L36 34 L33 39 L27 39 L24 34 L27 29 Z'
+					fill='none'
+					stroke={secondaryColor}
+					strokeWidth='0.04'
+				/>
+				{/* 11 */}
+				<path
+					d='M30 27 L36 31 L36 37 L30 41 L24 37 L24 31 Z'
 					fill='none'
 					stroke={primaryColor}
-					strokeWidth='0.02'
+					strokeWidth='0.05'
+				/>
+				{/* 10 */}
+				<path
+					d='M34 27 L38 34 L34 41 L26 41 L22 34 L26 27 Z'
+					fill='none'
+					stroke={secondaryColor}
+					strokeWidth='0.06'
+				/>
+				{/* 9 */}
+				<path
+					d='M30 25 L38 30 L38 38 L30 43 L22 38 L22 30 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='0.08'
+				/>
+				{/* 8 */}
+				<path
+					d='M35 25 L40 34 L35 43 L25 43 L20 34 L25 25 Z'
+					fill='none'
+					stroke={secondaryColor}
+					strokeWidth='0.1'
+				/>
+				{/* 7 */}
+				<path
+					d='M30 22 L40 28 L40 40 L30 46 L20 40 L20 28 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='0.15'
+				/>
+				{/* 6 */}
+				<path
+					d='M37 22 L44 34 L37 46 L23 46 L16 34 L23 22 Z'
+					fill='none'
+					stroke={secondaryColor}
+					strokeWidth='0.2'
+				/>
+				{/* 5 */}
+				<path
+					d='M30 18 L44 26 L44 42 L30 50 L16 42 L16 26 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='0.3'
+				/>
+				{/* 4 */}
+				<path
+					d='M39 18 L48 34 L39 50 L21 50 L12 34 L21 18 Z'
+					fill='none'
+					stroke={secondaryColor}
+					strokeWidth='0.5'
+				/>
+				{/* 3 */}
+				<path
+					d='M30 13 L48 24 L48 44 L30 55 L12 44 L12 24 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='0.8'
+				/>
+				{/* 2 */}
+				<path
+					d='M42 13 L54 34 L42 55 L18 55 L6 34 L18 13 Z'
+					fill='none'
+					stroke={secondaryColor}
+					strokeWidth='1.5'
+				/>
+				{/* 1 - внешний (рисуется последним, будет сверху) */}
+				<path
+					d='M30 6 L54 20 L54 48 L30 62 L6 48 L6 20 Z'
+					fill='none'
+					stroke={primaryColor}
+					strokeWidth='2.5'
 				/>
 			</g>
 

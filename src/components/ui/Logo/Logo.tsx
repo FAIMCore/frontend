@@ -39,7 +39,7 @@ const Logo = () => {
 				<path
 					d='M32 30 L34 34 L32 38 L28 38 L26 34 L28 30 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='0.02'
 				/>
 				{/* 13 */}
@@ -53,7 +53,7 @@ const Logo = () => {
 				<path
 					d='M33 29 L36 34 L33 39 L27 39 L24 34 L27 29 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='0.04'
 				/>
 				{/* 11 */}
@@ -67,7 +67,7 @@ const Logo = () => {
 				<path
 					d='M34 27 L38 34 L34 41 L26 41 L22 34 L26 27 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='0.06'
 				/>
 				{/* 9 */}
@@ -81,7 +81,7 @@ const Logo = () => {
 				<path
 					d='M35 25 L40 34 L35 43 L25 43 L20 34 L25 25 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='0.1'
 				/>
 				{/* 7 */}
@@ -95,7 +95,7 @@ const Logo = () => {
 				<path
 					d='M37 22 L44 34 L37 46 L23 46 L16 34 L23 22 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='0.2'
 				/>
 				{/* 5 */}
@@ -109,7 +109,7 @@ const Logo = () => {
 				<path
 					d='M39 18 L48 34 L39 50 L21 50 L12 34 L21 18 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='0.5'
 				/>
 				{/* 3 */}
@@ -123,7 +123,7 @@ const Logo = () => {
 				<path
 					d='M42 13 L54 34 L42 55 L18 55 L6 34 L18 13 Z'
 					fill='none'
-					stroke={secondaryColor}
+					stroke={primaryColor}
 					strokeWidth='1.5'
 				/>
 				{/* 1 - внешний (рисуется последним, будет сверху) */}

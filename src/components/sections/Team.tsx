@@ -24,9 +24,9 @@ const cardVariants = {
 
 const memberKeys = ['igor', 'anna', 'alex'] as const;
 const memberImages = [
-	'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-	'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+    { src: '/team/igor.jpg' },
+    { src: '/team/anna.jpg', transform: 'translateX(-10%)' },
+	{ src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face' },
 ];
 
 const Team = () => {
@@ -72,7 +72,7 @@ const Team = () => {
 							variants={cardVariants}>
 							<div className={styles.imageWrapper}>
 								<img
-									src={member.image}
+									src={member.image.src}
 									alt={member.name}
 									className={styles.image}
 								/>

@@ -3,12 +3,13 @@ import { HelmetProvider } from 'react-helmet-async';
 import AnimatedGrid from './components/animations/AnimatedGrid';
 import {
 	About,
+	Problems,
+	Results,
 	Services,
 	Portfolio,
 	Pricing,
 	Testimonials,
 	FAQ,
-	Team,
 	TechStack,
 	Contact,
 	Footer,
@@ -35,12 +36,13 @@ function App() {
 					<main>
 						<AnimatedGrid />
 						<About />
+						<Problems />
 						<Services />
 						<Portfolio />
+						<Results />
 						<Pricing />
 						<Testimonials />
 						<FAQ />
-						<Team />
 						<TechStack />
 						<Contact />
 						<Footer />

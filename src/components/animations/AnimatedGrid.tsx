@@ -313,6 +313,22 @@ const AnimatedGrid = () => {
 				<p className={styles.subtitle}>
 					{t.hero.subtitle}
 				</p>
+				<ul className={styles.heroBullets}>
+					{t.hero.bullets.map((b) => (
+						<li key={b} className={styles.heroBullet}>
+							<span className={styles.heroBulletCheck} aria-hidden="true">✓</span>
+							<span>{b}</span>
+						</li>
+					))}
+				</ul>
+				<div className={styles.heroTiming}>
+					{t.hero.timing.map((line) => (
+						<span key={line} className={styles.heroTimingItem}>
+							<span className={styles.heroTimingArrow} aria-hidden="true">→</span>
+							{line}
+						</span>
+					))}
+				</div>
 				<div className={styles.ctaContainer}>
 					<a
 						className={styles.ctaButton}
@@ -327,20 +343,14 @@ const AnimatedGrid = () => {
 						{t.hero.ctaSecondary}
 					</button>
 				</div>
-				<div className={styles.trustRow}>
-					<span className={styles.trustItem}>★ {t.hero.trust.rating}</span>
-					<span className={styles.trustDot}>•</span>
-					<span className={styles.trustItem}>{t.hero.trust.projects}</span>
-					<span className={styles.trustDot}>•</span>
-					<span className={styles.trustItem}>{t.hero.trust.years}</span>
-					<span className={styles.trustDot}>•</span>
-					<span className={styles.trustItem}>{t.hero.trust.response}</span>
-				</div>
 			</motion.div>
 
 			{/* Scroll indicator */}
-			<motion.div
+			<motion.button
+				type="button"
 				className={styles.scrollIndicator}
+				onClick={() => scrollToSection('about')}
+				aria-label={t.hero.scroll}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 1.2, duration: 0.6 }}>
@@ -350,7 +360,7 @@ const AnimatedGrid = () => {
 					transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}>
 					<ArrowDownIcon className={styles.scrollIcon} />
 				</motion.div>
-			</motion.div>
+			</motion.button>
 		</div>
 	);
 };

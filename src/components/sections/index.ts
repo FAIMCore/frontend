@@ -1,4 +1,6 @@
 export { default as About } from './About';
+export { default as Problems } from './Problems';
+export { default as Results } from './Results';
 export { default as Services } from './Services';
 export { default as TechStack } from './TechStack';
 export { default as Portfolio } from './Portfolio';

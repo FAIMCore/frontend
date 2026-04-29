@@ -32,12 +32,12 @@ const projectImages = [
 	'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
 ];
 const projectTags = [
-	['React', 'Node.js', 'PostgreSQL'],
-	['Next.js', 'WebRTC', 'MongoDB'],
-	['React', 'Stripe', 'Redis'],
-	['Vue.js', 'Firebase', 'AWS'],
-	['React Native', 'GraphQL', 'Maps API'],
-	['Next.js', 'Prisma', 'Stripe'],
+	['Django', 'PostgreSQL', 'Nova Poshta API'],
+	['FastAPI', '1С / BAS', 'Barcode WMS'],
+	['Django', 'React', 'B2B portal'],
+	['Django', 'Rozetka API', 'Prom API'],
+	['FastAPI', 'PostgreSQL', 'VIN lookup'],
+	['Django', 'Loyalty engine', 'Celery'],
 ];
 
 const Portfolio = () => {
@@ -67,6 +67,23 @@ const Portfolio = () => {
 					<span className={styles.label}>{t.portfolio.label}</span>
 					<h2 className={styles.title}>{t.portfolio.title}</h2>
 					<p className={styles.subtitle}>{t.portfolio.subtitle}</p>
+				</motion.div>
+
+				<motion.div
+					className={styles.summary}
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: '-50px' }}
+					transition={{ duration: 0.6 }}>
+					<span className={styles.summaryLabel}>{t.portfolio.summaryLabel}</span>
+					<div className={styles.summaryGrid}>
+						{t.portfolio.summaryItems.map((s) => (
+							<div key={s.label} className={styles.summaryItem}>
+								<span className={styles.summaryMetric}>{s.metric}</span>
+								<span className={styles.summaryText}>{s.label}</span>
+							</div>
+						))}
+					</div>
 				</motion.div>
 
 				<motion.div

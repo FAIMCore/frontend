@@ -24,9 +24,9 @@ const Footer = () => {
 	const footerLinks = {
 		company: [
 			{ label: t.footer.links.about, href: '#about' },
-			{ label: t.footer.links.team, href: '#team' },
 			{ label: t.footer.links.pricing, href: '#pricing' },
 			{ label: t.footer.links.faq, href: '#faq' },
+			{ label: t.footer.links.contact, href: '#contact' },
 		],
 		services: [
 			{ label: t.footer.links.webDev, href: '#services' },

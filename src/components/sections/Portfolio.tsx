@@ -77,8 +77,8 @@ const Portfolio = () => {
 					transition={{ duration: 0.6 }}>
 					<span className={styles.summaryLabel}>{t.portfolio.summaryLabel}</span>
 					<div className={styles.summaryGrid}>
-						{t.portfolio.summaryItems.map((s) => (
-							<div key={s.label} className={styles.summaryItem}>
+						{t.portfolio.summaryItems.map((s, idx) => (
+							<div key={idx} className={styles.summaryItem}>
 								<span className={styles.summaryMetric}>{s.metric}</span>
 								<span className={styles.summaryText}>{s.label}</span>
 							</div>

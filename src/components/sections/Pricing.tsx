@@ -69,8 +69,8 @@ const Pricing = () => {
 								</div>
 								<div className={styles.timeline}>⏱ {plan.timeline}</div>
 								<ul className={styles.features}>
-									{plan.features.map((feat) => (
-										<li key={feat} className={styles.feature}>{feat}</li>
+									{plan.features.map((feat, idx) => (
+										<li key={idx} className={styles.feature}>{feat}</li>
 									))}
 								</ul>
 								<a

@@ -55,9 +55,9 @@ const About = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, margin: '-50px' }}>
-					{stats.map((stat) => (
+					{stats.map((stat, idx) => (
 						<motion.div
-							key={stat.label}
+							key={idx}
 							className={styles.statItem}
 							variants={itemVariants}>
 							<span className={styles.statNumber}>{stat.number}</span>

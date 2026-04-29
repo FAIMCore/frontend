@@ -60,7 +60,7 @@ const Footer = () => {
 						<div className={styles.social}>
 							{socialLinks.map((link) => (
 								<a
-									key={link.label}
+									key={link.href}
 									href={link.href}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -81,8 +81,8 @@ const Footer = () => {
 							transition={{ duration: 0.5, delay: 0.1 }}>
 							<h4 className={styles.linkTitle}>{t.footer.company}</h4>
 							<ul className={styles.linkList}>
-								{footerLinks.company.map((link) => (
-									<li key={link.label}>
+								{footerLinks.company.map((link, idx) => (
+									<li key={idx}>
 										<a href={link.href} className={styles.link}>
 											{link.label}
 										</a>
@@ -99,8 +99,8 @@ const Footer = () => {
 							transition={{ duration: 0.5, delay: 0.2 }}>
 							<h4 className={styles.linkTitle}>{t.footer.services}</h4>
 							<ul className={styles.linkList}>
-								{footerLinks.services.map((link) => (
-									<li key={link.label}>
+								{footerLinks.services.map((link, idx) => (
+									<li key={idx}>
 										<a href={link.href} className={styles.link}>
 											{link.label}
 										</a>
@@ -117,8 +117,8 @@ const Footer = () => {
 							transition={{ duration: 0.5, delay: 0.3 }}>
 							<h4 className={styles.linkTitle}>{t.footer.resources}</h4>
 							<ul className={styles.linkList}>
-								{footerLinks.resources.map((link) => (
-									<li key={link.label}>
+								{footerLinks.resources.map((link, idx) => (
+									<li key={idx}>
 										<a href={link.href} className={styles.link}>
 											{link.label}
 										</a>

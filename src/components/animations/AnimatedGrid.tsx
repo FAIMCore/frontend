@@ -314,16 +314,16 @@ const AnimatedGrid = () => {
 					{t.hero.subtitle}
 				</p>
 				<ul className={styles.heroBullets}>
-					{t.hero.bullets.map((b) => (
-						<li key={b} className={styles.heroBullet}>
+					{t.hero.bullets.map((b, idx) => (
+						<li key={idx} className={styles.heroBullet}>
 							<span className={styles.heroBulletCheck} aria-hidden="true">✓</span>
 							<span>{b}</span>
 						</li>
 					))}
 				</ul>
 				<div className={styles.heroTiming}>
-					{t.hero.timing.map((line) => (
-						<span key={line} className={styles.heroTimingItem}>
+					{t.hero.timing.map((line, idx) => (
+						<span key={idx} className={styles.heroTimingItem}>
 							<span className={styles.heroTimingArrow} aria-hidden="true">→</span>
 							{line}
 						</span>

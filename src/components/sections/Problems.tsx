@@ -42,8 +42,8 @@ const Problems = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, margin: '-50px' }}>
-					{t.problems.items.map((item) => (
-						<motion.li key={item} className={styles.item} variants={itemVariants}>
+					{t.problems.items.map((item, idx) => (
+						<motion.li key={idx} className={styles.item} variants={itemVariants}>
 							<span className={styles.bullet} aria-hidden="true">
 								<ExclamationTriangleIcon />
 							</span>

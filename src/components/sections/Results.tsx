@@ -42,8 +42,8 @@ const Results = () => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, margin: '-50px' }}>
-					{t.results.items.map((item) => (
-						<motion.li key={item} className={styles.item} variants={itemVariants}>
+					{t.results.items.map((item, idx) => (
+						<motion.li key={idx} className={styles.item} variants={itemVariants}>
 							<span className={styles.check} aria-hidden="true">
 								<CheckIcon />
 							</span>

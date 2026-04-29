@@ -314,17 +314,27 @@ const AnimatedGrid = () => {
 					{t.hero.subtitle}
 				</p>
 				<div className={styles.ctaContainer}>
-					<button
+					<a
 						className={styles.ctaButton}
-						onClick={() => scrollToSection('contact')}>
-						<span>{t.hero.cta}</span>
+						href="tel:+380985507799"
+						aria-label={`${t.hero.ctaPhone} +38 098 550 77 99`}>
+						<span>📞 {t.hero.ctaPhone}</span>
 						<div className={styles.ctaGlow} />
-					</button>
+					</a>
 					<button
 						className={styles.ctaSecondary}
 						onClick={() => scrollToSection('portfolio')}>
 						{t.hero.ctaSecondary}
 					</button>
+				</div>
+				<div className={styles.trustRow}>
+					<span className={styles.trustItem}>★ {t.hero.trust.rating}</span>
+					<span className={styles.trustDot}>•</span>
+					<span className={styles.trustItem}>{t.hero.trust.projects}</span>
+					<span className={styles.trustDot}>•</span>
+					<span className={styles.trustItem}>{t.hero.trust.years}</span>
+					<span className={styles.trustDot}>•</span>
+					<span className={styles.trustItem}>{t.hero.trust.response}</span>
 				</div>
 			</motion.div>
 

@@ -73,6 +73,47 @@
 	gap: 12px;
 }
 
+.callButton {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 20px;
+	background: linear-gradient(135deg, rgba(196, 149, 106, 0.18) 0%, rgba(196, 149, 106, 0.08) 100%);
+	border: 1px solid rgba(196, 149, 106, 0.4);
+	border-radius: 14px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: left;
+	text-decoration: none;
+	color: inherit;
+
+	.light & {
+		background: linear-gradient(135deg, rgba(196, 149, 106, 0.2) 0%, rgba(196, 149, 106, 0.1) 100%);
+		border-color: rgba(196, 149, 106, 0.5);
+	}
+
+	&:hover {
+		background: linear-gradient(135deg, rgba(196, 149, 106, 0.28) 0%, rgba(196, 149, 106, 0.14) 100%);
+		border-color: rgba(196, 149, 106, 0.6);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(196, 149, 106, 0.2);
+
+		.messengerIcon {
+			background: rgba(196, 149, 106, 0.3);
+		}
+	}
+
+	.messengerIcon {
+		background: rgba(196, 149, 106, 0.2);
+		color: #c4956a;
+
+		.light & {
+			background: rgba(196, 149, 106, 0.25);
+			color: #b8845c;
+		}
+	}
+}
+
 .telegramButton {
 	display: flex;
 	align-items: center;

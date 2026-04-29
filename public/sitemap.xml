@@ -8,7 +8,7 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://faimcore.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://faimcore.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://faimcore.com/"/>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,52 +19,73 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://faimcore.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://faimcore.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://faimcore.com/"/>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Sections (anchors for SPA) -->
+  <!-- Section anchors -->
   <url>
-    <loc>https://faimcore.com/#about</loc>
-    <lastmod>2025-01-29</lastmod>
+    <loc>https://faimcore.com/#services</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://faimcore.com/#services</loc>
-    <lastmod>2025-01-29</lastmod>
+    <loc>https://faimcore.com/#pricing</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://faimcore.com/#portfolio</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#testimonials</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#faq</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://faimcore.com/#about</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://faimcore.com/#team</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://faimcore.com/#blog</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://faimcore.com/#tech</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://faimcore.com/#contact</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
 </urlset>

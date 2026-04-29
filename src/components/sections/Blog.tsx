@@ -75,8 +75,12 @@ const Blog = () => {
 							<div className={styles.imageWrapper}>
 								<img
 									src={post.image}
-									alt={post.title}
+									alt={`${post.title} — стаття від FAIMCore`}
 									className={styles.image}
+									loading="lazy"
+									decoding="async"
+									width="800"
+									height="500"
 								/>
 								<span className={styles.category}>{post.category}</span>
 							</div>

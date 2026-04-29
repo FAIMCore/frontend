@@ -33,6 +33,24 @@ const Team = () => {
 	const { theme } = useTheme();
 	const { t } = useLanguage();
 
+	const socialByKey = {
+		igor: {
+			linkedin: 'https://www.linkedin.com/in/igorfedianin',
+			github: 'https://github.com/igorfedianin',
+			twitter: 'https://x.com/igorfedianin',
+		},
+		anna: {
+			linkedin: 'https://www.linkedin.com/company/faimcore',
+			github: 'https://github.com/faimcore',
+			twitter: 'https://x.com/faimcore',
+		},
+		alex: {
+			linkedin: 'https://www.linkedin.com/company/faimcore',
+			github: 'https://github.com/faimcore',
+			twitter: 'https://x.com/faimcore',
+		},
+	} as const;
+
 	const team = memberKeys.map((key, index) => ({
 		id: index + 1,
 		key,
@@ -40,7 +58,7 @@ const Team = () => {
 		role: t.team.members[key].role,
 		bio: t.team.members[key].bio,
 		image: memberImages[index],
-		social: { linkedin: '#', github: '#', twitter: '#' },
+		social: socialByKey[key],
 	}));
 
 	return (
@@ -73,8 +91,12 @@ const Team = () => {
 							<div className={styles.imageWrapper}>
 								<img
 									src={member.image.src}
-									alt={member.name}
+									alt={`${member.name} — ${member.role}, FAIMCore`}
 									className={styles.image}
+									loading="lazy"
+									decoding="async"
+									width="400"
+									height="400"
 								/>
 							</div>
 							<div className={styles.content}>
@@ -83,13 +105,28 @@ const Team = () => {
 								<p className={styles.bio}>{member.bio}</p>
 								{member.social && (
 									<div className={styles.social}>
-										<a href={member.social.linkedin} className={styles.socialLink}>
+										<a
+											href={member.social.linkedin}
+											className={styles.socialLink}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={`LinkedIn — ${member.name}`}>
 											<LinkedInLogoIcon />
 										</a>
-										<a href={member.social.github} className={styles.socialLink}>
+										<a
+											href={member.social.github}
+											className={styles.socialLink}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={`GitHub — ${member.name}`}>
 											<GitHubLogoIcon />
 										</a>
-										<a href={member.social.twitter} className={styles.socialLink}>
+										<a
+											href={member.social.twitter}
+											className={styles.socialLink}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={`Twitter — ${member.name}`}>
 											<TwitterLogoIcon />
 										</a>
 									</div>

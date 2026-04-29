@@ -1,0 +1,103 @@
+.bar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	display: none;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1px;
+	padding: 0;
+	background: rgba(15, 13, 10, 0.95);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-top: 1px solid rgba(196, 149, 106, 0.18);
+	box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.25);
+	padding-bottom: env(safe-area-inset-bottom, 0);
+
+	&.light {
+		background: rgba(255, 252, 247, 0.96);
+		border-top-color: rgba(196, 149, 106, 0.25);
+		box-shadow: 0 -8px 32px rgba(45, 38, 32, 0.08);
+	}
+}
+
+.button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	padding: 12px 8px;
+	font-family: 'Inter', sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	color: #f5efe6;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background 0.2s ease;
+	min-height: 56px;
+
+	.light & {
+		color: #2d2620;
+	}
+
+	&:active {
+		background: rgba(196, 149, 106, 0.15);
+	}
+
+	svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+.callButton {
+	background: linear-gradient(135deg, #d4b896 0%, #c4956a 100%);
+	color: #1a1612 !important;
+
+	.light & {
+		background: linear-gradient(135deg, #c4956a 0%, #b8845c 100%);
+		color: #ffffff !important;
+	}
+
+	&:active {
+		filter: brightness(0.95);
+		background: linear-gradient(135deg, #d4b896 0%, #c4956a 100%);
+
+		.light & {
+			background: linear-gradient(135deg, #c4956a 0%, #b8845c 100%);
+		}
+	}
+}
+
+.telegramButton {
+	color: #5fa3c4;
+
+	.light & {
+		color: #3d8aab;
+	}
+}
+
+.whatsappButton {
+	color: #5cbf6e;
+
+	.light & {
+		color: #2ea944;
+	}
+}
+
+@media (max-width: 768px) {
+	.bar {
+		display: grid;
+	}
+}
+
+/* Add bottom padding to body so sticky bar doesn't cover content */
+:global(body) {
+	@media (max-width: 768px) {
+		padding-bottom: 64px;
+	}
+}

@@ -11,10 +11,10 @@ import Logo from '../ui/Logo';
 import styles from './Footer.module.scss';
 
 const socialLinks = [
-	{ icon: LinkedInLogoIcon, href: '#', label: 'LinkedIn' },
-	{ icon: GitHubLogoIcon, href: '#', label: 'GitHub' },
-	{ icon: TwitterLogoIcon, href: '#', label: 'Twitter' },
-	{ icon: InstagramLogoIcon, href: '#', label: 'Instagram' },
+	{ icon: LinkedInLogoIcon, href: 'https://www.linkedin.com/company/faimcore', label: 'LinkedIn' },
+	{ icon: GitHubLogoIcon, href: 'https://github.com/faimcore', label: 'GitHub' },
+	{ icon: TwitterLogoIcon, href: 'https://x.com/faimcore', label: 'Twitter / X' },
+	{ icon: InstagramLogoIcon, href: 'https://www.instagram.com/faimcore', label: 'Instagram' },
 ];
 
 const Footer = () => {
@@ -25,8 +25,8 @@ const Footer = () => {
 		company: [
 			{ label: t.footer.links.about, href: '#about' },
 			{ label: t.footer.links.team, href: '#team' },
-			{ label: t.footer.links.careers, href: '#' },
-			{ label: t.footer.links.blog, href: '#blog' },
+			{ label: t.footer.links.pricing, href: '#pricing' },
+			{ label: t.footer.links.faq, href: '#faq' },
 		],
 		services: [
 			{ label: t.footer.links.webDev, href: '#services' },
@@ -35,10 +35,10 @@ const Footer = () => {
 			{ label: t.footer.links.mvp, href: '#services' },
 		],
 		resources: [
-			{ label: t.footer.links.docs, href: '#' },
-			{ label: t.footer.links.help, href: '#' },
-			{ label: t.footer.links.privacy, href: '#' },
-			{ label: t.footer.links.terms, href: '#' },
+			{ label: t.footer.links.contact, href: '#contact' },
+			{ label: 'hello@faimcore.com', href: 'mailto:hello@faimcore.com' },
+			{ label: '+38 098 550 77 99', href: 'tel:+380985507799' },
+			{ label: 'Telegram', href: 'https://t.me/faimcore' },
 		],
 	};
 
@@ -62,6 +62,8 @@ const Footer = () => {
 								<a
 									key={link.label}
 									href={link.href}
+									target="_blank"
+									rel="noopener noreferrer"
 									className={styles.socialLink}
 									aria-label={link.label}>
 									<link.icon />

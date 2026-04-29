@@ -83,8 +83,12 @@ const Portfolio = () => {
 							<div className={styles.imageWrapper}>
 								<img
 									src={project.image}
-									alt={project.title}
+									alt={`${project.title} — ${project.category} проєкт від FAIMCore`}
 									className={styles.image}
+									loading="lazy"
+									decoding="async"
+									width="800"
+									height="600"
 								/>
 								<div className={styles.overlay}>
 									<button className={styles.viewButton}>

@@ -95,6 +95,16 @@ const Contact = () => {
 
 					{/* Right column - Messengers */}
 					<div className={styles.column}>
+						<a
+							href="tel:+380985507799"
+							className={styles.callButton}
+							aria-label="Зателефонувати +38 098 550 77 99">
+							<div className={styles.messengerIcon}>
+								<MobileIcon />
+							</div>
+							<span className={styles.messengerTitle}>{t.contact.cta.callNow}</span>
+						</a>
+
 						<button className={styles.telegramButton} onClick={handleTelegramClick}>
 							<div className={styles.messengerIcon}>
 								<TelegramIcon />

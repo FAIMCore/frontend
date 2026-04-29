@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="FAIMCore — Розробка сайтів та веб-додатків в Києві">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1612"/>
+      <stop offset=".55" stop-color="#141110"/>
+      <stop offset="1" stop-color="#0f0d0a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".22" cy=".18" r=".55">
+      <stop offset="0" stop-color="#c4956a" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#c4956a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx=".82" cy=".82" r=".55">
+      <stop offset="0" stop-color="#b8845c" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#b8845c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5efe6"/>
+      <stop offset=".5" stop-color="#d4b896"/>
+      <stop offset="1" stop-color="#c4956a"/>
+    </linearGradient>
+    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4b896"/>
+      <stop offset="1" stop-color="#c4956a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Logo hexagon (simplified) -->
+  <g transform="translate(80,72)" stroke="#c4956a" fill="none">
+    <path d="M30 6 L54 20 L54 48 L30 62 L6 48 L6 20 Z" stroke-width="2.5"/>
+    <path d="M30 13 L48 24 L48 44 L30 55 L12 44 L12 24 Z" stroke-width="1.5"/>
+    <path d="M30 18 L44 26 L44 42 L30 50 L16 42 L16 26 Z" stroke-width="1"/>
+    <path d="M30 22 L40 28 L40 40 L30 46 L20 40 L20 28 Z" stroke-width=".6"/>
+  </g>
+
+  <!-- Brand text -->
+  <text x="160" y="118" font-family="Inter, system-ui, sans-serif" font-size="44" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#f5efe6">FAIM</tspan><tspan fill="#c4956a">Core</tspan>
+  </text>
+  <text x="160" y="148" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="#c4956a" letter-spacing="3">СТУДІЯ ВЕБ-РОЗРОБКИ В КИЄВІ</text>
+
+  <!-- Tagline pill -->
+  <g transform="translate(80,210)">
+    <rect width="320" height="40" rx="20" fill="rgba(196,149,106,0.12)" stroke="rgba(196,149,106,0.35)"/>
+    <text x="160" y="26" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#c4956a" letter-spacing="2">З 2020 РОКУ • ★ 4.9 / 5 РЕЙТИНГ</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="80" y="320" font-family="Inter, system-ui, sans-serif" font-size="62" font-weight="700" fill="url(#title)">Розробка сайтів</text>
+  <text x="80" y="390" font-family="Inter, system-ui, sans-serif" font-size="62" font-weight="700" fill="url(#title)">та веб-додатків в Києві</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="450" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="rgba(245,239,230,0.72)">Сайт під ключ за 2–6 тижнів. Фікс-ціна, ФОП, повний код у вас.</text>
+
+  <!-- Price pills -->
+  <g font-family="Inter, system-ui, sans-serif" font-weight="600">
+    <g transform="translate(80,490)">
+      <rect width="220" height="48" rx="12" fill="rgba(245,239,230,0.06)" stroke="rgba(196,149,106,0.3)"/>
+      <text x="20" y="30" font-size="16" fill="rgba(245,239,230,0.6)">Лендінг від</text>
+      <text x="135" y="30" font-size="18" fill="#f5efe6">18 000 ₴</text>
+    </g>
+    <g transform="translate(316,490)">
+      <rect width="240" height="48" rx="12" fill="rgba(245,239,230,0.06)" stroke="rgba(196,149,106,0.3)"/>
+      <text x="20" y="30" font-size="16" fill="rgba(245,239,230,0.6)">Корпоративний від</text>
+      <text x="170" y="30" font-size="18" fill="#f5efe6">45 000 ₴</text>
+    </g>
+    <g transform="translate(572,490)">
+      <rect width="240" height="48" rx="12" fill="rgba(245,239,230,0.06)" stroke="rgba(196,149,106,0.3)"/>
+      <text x="20" y="30" font-size="16" fill="rgba(245,239,230,0.6)">Веб-застосунок від</text>
+      <text x="174" y="30" font-size="18" fill="#f5efe6">90 000 ₴</text>
+    </g>
+  </g>
+
+  <!-- Phone CTA -->
+  <g transform="translate(80,560)">
+    <rect width="360" height="56" rx="14" fill="url(#cta)"/>
+    <text x="180" y="36" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#1a1612">📞 +38 098 550 77 99</text>
+  </g>
+
+  <!-- Right column: tech badges -->
+  <g font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="#c4956a">
+    <g transform="translate(880,200)">
+      <rect width="240" height="320" rx="20" fill="rgba(245,239,230,0.04)" stroke="rgba(245,239,230,0.08)"/>
+      <text x="120" y="40" text-anchor="middle" font-size="12" fill="rgba(245,239,230,0.5)" letter-spacing="2">ТЕХНОЛОГІЇ</text>
+
+      <g transform="translate(20,60)" font-size="13">
+        <rect width="92" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="46" y="19" text-anchor="middle">React</text>
+      </g>
+      <g transform="translate(120,60)" font-size="13">
+        <rect width="100" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="50" y="19" text-anchor="middle">Next.js</text>
+      </g>
+      <g transform="translate(20,98)" font-size="13">
+        <rect width="100" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="50" y="19" text-anchor="middle">TypeScript</text>
+      </g>
+      <g transform="translate(128,98)" font-size="13">
+        <rect width="92" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="46" y="19" text-anchor="middle">Python</text>
+      </g>
+      <g transform="translate(20,136)" font-size="13">
+        <rect width="92" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="46" y="19" text-anchor="middle">Django</text>
+      </g>
+      <g transform="translate(120,136)" font-size="13">
+        <rect width="100" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="50" y="19" text-anchor="middle">FastAPI</text>
+      </g>
+      <g transform="translate(20,174)" font-size="13">
+        <rect width="100" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="50" y="19" text-anchor="middle">PostgreSQL</text>
+      </g>
+      <g transform="translate(128,174)" font-size="13">
+        <rect width="92" height="28" rx="14" fill="rgba(196,149,106,0.12)"/>
+        <text x="46" y="19" text-anchor="middle">AWS</text>
+      </g>
+
+      <g transform="translate(20,228)">
+        <text font-size="32" font-weight="700" fill="#f5efe6">50+</text>
+        <text x="56" y="14" font-size="12" fill="rgba(245,239,230,0.6)">проєктів</text>
+        <text x="56" y="30" font-size="12" fill="rgba(245,239,230,0.6)">виконано</text>
+      </g>
+      <g transform="translate(140,228)">
+        <text font-size="32" font-weight="700" fill="#f5efe6">5+</text>
+        <text x="40" y="14" font-size="12" fill="rgba(245,239,230,0.6)">років</text>
+        <text x="40" y="30" font-size="12" fill="rgba(245,239,230,0.6)">на ринку</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Domain -->
+  <text x="1120" y="600" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="500" fill="rgba(245,239,230,0.4)">faimcore.com</text>
+</svg>

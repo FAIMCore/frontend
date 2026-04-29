@@ -39,11 +39,10 @@ const Navigation = () => {
 	}, [isMenuOpen]);
 
 	const menuItems = [
-		{ label: t.nav.about, href: '#about' },
 		{ label: t.nav.services, href: '#services' },
 		{ label: t.nav.portfolio, href: '#portfolio' },
-		{ label: t.nav.team, href: '#team' },
-		{ label: t.nav.tech, href: '#tech' },
+		{ label: t.nav.pricing, href: '#pricing' },
+		{ label: t.nav.faq, href: '#faq' },
 		{ label: t.nav.contact, href: '#contact' },
 	];
 
